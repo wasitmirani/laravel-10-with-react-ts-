@@ -1,9 +1,10 @@
 <?php
 
-use App\Http\Controllers\ProfileController;
-use Illuminate\Foundation\Application;
-use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
+use Illuminate\Support\Facades\Route;
+use Illuminate\Foundation\Application;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\backend\BackendController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,4 +21,6 @@ use Inertia\Inertia;
 
 Route::get('/{any?}',fn()=> view('app'));
 
+
+// Route::get('/app/{any?}',[BackendController::class,'app']);
 require __DIR__.'/auth.php';
