@@ -3,8 +3,8 @@ import Home from "@/pages/home/Home";
 import Dashboard from "@/pages/dashboard/Dashboard";
 
 
-const generateRoute=(name:string,el:any)=>{
-    return {path:name,element:el};
+const generateRoute=(name:string,el:any,permission?: string)=>{
+    return {path:name,element:el,meta:{permission:permission}};
 }
 
 const routes: RouteObject[] = [
@@ -20,8 +20,7 @@ const routes: RouteObject[] = [
 //   },
 // { path: "/", element: <Home /> },
 generateRoute('/',<Home/>),
-{ path: "/dashboard", element: <Dashboard /> }
-//   { path: "register", element: <Home /> },
+generateRoute('/dashboard',<Dashboard/>),
 //   { path: "*", element: <Home /> }
 ];
 

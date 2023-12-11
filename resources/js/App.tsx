@@ -1,18 +1,12 @@
 import React from 'react';
-import { RouteObject, useRoutes } from "react-router-dom";
-import routes from "./routes/router";
 
+
+import  MasterComponent  from "./layouts/master";
 
 function App() {
-    const appRoutes = useRoutes(routes);
   return (
-    <div>
-
-{appRoutes}
-
-    </div>
-
-  );
+    <MasterComponent/>
+  )
 }
 
 export default App;
