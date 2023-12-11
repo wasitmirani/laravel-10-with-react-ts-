@@ -19,8 +19,8 @@ use App\Http\Controllers\backend\BackendController;
 
 
 
-Route::get('/{any?}',fn()=> view('app'));
+Route::get('/{any?}',fn()=> redirect('/app/home'));
 
 
-// Route::get('/app/{any?}',[BackendController::class,'app']);
+Route::get('/app/{any?}',[BackendController::class,'index'])->name('backend.index');
 require __DIR__.'/auth.php';

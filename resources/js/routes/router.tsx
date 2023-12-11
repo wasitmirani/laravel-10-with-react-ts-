@@ -2,9 +2,9 @@ import { RouteObject } from "react-router-dom";
 import Home from "@/pages/home/Home";
 import Dashboard from "@/pages/dashboard/Dashboard";
 
-
+const perfix="/app";
 const generateRoute=(name:string,el:any,permission?: string)=>{
-    return {path:name,element:el,meta:{permission:permission}};
+    return {path:perfix+name,element:el,meta:{permission:permission}};
 }
 
 const routes: RouteObject[] = [
@@ -19,7 +19,7 @@ const routes: RouteObject[] = [
 //     ]
 //   },
 // { path: "/", element: <Home /> },
-generateRoute('/',<Home/>),
+generateRoute('/home',<Home/>),
 generateRoute('/dashboard',<Dashboard/>),
 //   { path: "*", element: <Home /> }
 ];
