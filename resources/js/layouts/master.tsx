@@ -16,19 +16,19 @@ return (
                 <div className="navbar-brand-box horizontal-logo">
                     <a href="index.html" className="logo logo-dark">
                         <span className="logo-sm">
-                            <img src="assets/images/logo-sm.png" alt="" height="22"/>
+                            <img src="/assets/images/logo-sm.png" alt="" height="22"/>
                         </span>
                         <span className="logo-lg">
-                            <img src="assets/images/logo-dark.png" alt="" height="17"/>
+                            <img src="/assets/images/logo-dark.png" alt="" height="17"/>
                         </span>
                     </a>
 
                     <a href="index.html" className="logo logo-light">
                         <span className="logo-sm">
-                            <img src="assets/images/logo-sm.png" alt="" height="22"/>
+                            <img src="/assets/images/logo-sm.png" alt="" height="22"/>
                         </span>
                         <span className="logo-lg">
-                            <img src="assets/images/logo-light.png" alt="" height="17"/>
+                            <img src="/assets/images/logo-light.png" alt="" height="17"/>
                         </span>
                     </a>
                 </div>
@@ -148,7 +148,7 @@ return (
 
                 <div className="dropdown ms-1 topbar-head-dropdown header-item">
                     <button type="button" className="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <img id="header-lang-img" src="assets/images/flags/us.svg" alt="Header Language" height="20" className="rounded"/>
+                        <img id="header-lang-img" src="/assets/images/flags/us.svg" alt="Header Language" height="20" className="rounded"/>
                     </button>
                     <div className="dropdown-menu dropdown-menu-end">
 
@@ -165,7 +165,7 @@ return (
 
 
                         <a href="javascript:void(0);" className="dropdown-item notify-item language" data-lang="gr" title="German">
-                            <img src="assets/images/flags/germany.svg" alt="user-image" className="me-2 rounded" height="18"/> <span className="align-middle">Deutsche</span>
+                            <img src="/assets/images/flags/germany.svg" alt="user-image" className="me-2 rounded" height="18"/> <span className="align-middle">Deutsche</span>
                         </a>
 
 
@@ -182,7 +182,7 @@ return (
 
 
                         <a href="javascript:void(0);" className="dropdown-item notify-item language" data-lang="ch" title="Chinese">
-                            <img src="assets/images/flags/china.svg" alt="user-image" className="me-2 rounded" height="18"/>
+                            <img src="/assets/images/flags/china.svg" alt="user-image" className="me-2 rounded" height="18"/>
                             <span className="align-middle">中国人</span>
                         </a>
 
@@ -242,7 +242,7 @@ return (
                             <div className="row g-0">
                                 <div className="col">
                                     <a className="dropdown-icon-item" href="#!">
-                                        <img src="assets/images/brands/dropbox.png" alt="dropbox"/>
+                                        <img src="/assets/images/brands/dropbox.png" alt="dropbox"/>
                                         <span>Dropbox</span>
                                     </a>
                                 </div>
@@ -294,7 +294,7 @@ return (
                                 </div>
                                 <div className="d-block dropdown-item dropdown-item-cart text-wrap px-3 py-2">
                                     <div className="d-flex align-items-center">
-                                        <img src="assets/images/products/img-1.png" className="me-3 rounded-circle avatar-sm p-2 bg-light" alt="user-pic"/>
+                                        <img src="/assets/images/products/img-1.png" className="me-3 rounded-circle avatar-sm p-2 bg-light" alt="user-pic"/>
                                         <div className="flex-grow-1">
                                             <h6 className="mt-0 mb-1 fs-14">
                                                 <a href="apps-ecommerce-product-details.html" className="text-reset">Branded
@@ -335,7 +335,7 @@ return (
 
                                 <div className="d-block dropdown-item dropdown-item-cart text-wrap px-3 py-2">
                                     <div className="d-flex align-items-center">
-                                        <img src="assets/images/products/img-3.png" className="me-3 rounded-circle avatar-sm p-2 bg-light" alt="user-pic"/>
+                                        <img src="/assets/images/products/img-3.png" className="me-3 rounded-circle avatar-sm p-2 bg-light" alt="user-pic"/>
                                         <div className="flex-grow-1">
                                             <h6 className="mt-0 mb-1 fs-14">
                                                 <a href="apps-ecommerce-product-details.html" className="text-reset">
@@ -356,7 +356,7 @@ return (
 
                                 <div className="d-block dropdown-item dropdown-item-cart text-wrap px-3 py-2">
                                     <div className="d-flex align-items-center">
-                                        <img src="assets/images/products/img-6.png" className="me-3 rounded-circle avatar-sm p-2 bg-light" alt="user-pic"/>
+                                        <img src="/assets/images/products/img-6.png" className="me-3 rounded-circle avatar-sm p-2 bg-light" alt="user-pic"/>
                                         <div className="flex-grow-1">
                                             <h6 className="mt-0 mb-1 fs-14">
                                                 <a href="apps-ecommerce-product-details.html" className="text-reset">Gray
@@ -377,7 +377,7 @@ return (
 
                                 <div className="d-block dropdown-item dropdown-item-cart text-wrap px-3 py-2">
                                     <div className="d-flex align-items-center">
-                                        <img src="assets/images/products/img-5.png" className="me-3 rounded-circle avatar-sm p-2 bg-light" alt="user-pic"/>
+                                        <img src="/assets/images/products/img-5.png" className="me-3 rounded-circle avatar-sm p-2 bg-light" alt="user-pic"/>
                                         <div className="flex-grow-1">
                                             <h6 className="mt-0 mb-1 fs-14">
                                                 <a href="apps-ecommerce-product-details.html" className="text-reset">Stillbird Helmet</a>
@@ -497,7 +497,7 @@ return (
 
                                     <div className="text-reset notification-item d-block dropdown-item position-relative">
                                         <div className="d-flex">
-                                            <img src="assets/images/users/avatar-2.jpg" className="me-3 rounded-circle avatar-xs flex-shrink-0" alt="user-pic"/>
+                                            <img src="/assets/images/users/avatar-2.jpg" className="me-3 rounded-circle avatar-xs flex-shrink-0" alt="user-pic"/>
                                             <div className="flex-grow-1">
                                                 <a href="#!" className="stretched-link">
                                                     <h6 className="mt-0 mb-1 fs-13 fw-semibold">Angela Bernier</h6>
@@ -546,7 +546,7 @@ return (
 
                                     <div className="text-reset notification-item d-block dropdown-item position-relative">
                                         <div className="d-flex">
-                                            <img src="assets/images/users/avatar-8.jpg" className="me-3 rounded-circle avatar-xs flex-shrink-0" alt="user-pic"/>
+                                            <img src="/assets/images/users/avatar-8.jpg" className="me-3 rounded-circle avatar-xs flex-shrink-0" alt="user-pic"/>
                                             <div className="flex-grow-1">
                                                 <a href="#!" className="stretched-link">
                                                     <h6 className="mt-0 mb-1 fs-13 fw-semibold">Maureen Gibson</h6>
@@ -629,7 +629,7 @@ return (
 
                                     <div className="text-reset notification-item d-block dropdown-item">
                                         <div className="d-flex">
-                                            <img src="assets/images/users/avatar-6.jpg" className="me-3 rounded-circle avatar-xs" alt="user-pic"/>
+                                            <img src="/assets/images/users/avatar-6.jpg" className="me-3 rounded-circle avatar-xs" alt="user-pic"/>
                                             <div className="flex-grow-1">
                                                 <a href="#!" className="stretched-link">
                                                     <h6 className="mt-0 mb-1 fs-13 fw-semibold">Kenneth Brown</h6>
@@ -755,16 +755,16 @@ return (
                         <img src="/assets/images/logo-sm.png" alt="" height="22"/>
                     </span>
                     <span className="logo-lg">
-                        <img src="assets/images/logo-dark.png" alt="" height="17"/>
+                        <img src="/assets/images/logo-dark.png" alt="" height="17"/>
                     </span>
                 </a>
 
                 <a href="index.html" className="logo logo-light">
                     <span className="logo-sm">
-                        <img src="assets/images/logo-sm.png" alt="" height="22"/>
+                        <img src="/assets/images/logo-sm.png" alt="" height="22"/>
                     </span>
                     <span className="logo-lg">
-                        <img src="assets/images/logo-light.png" alt="" height="17"/>
+                        <img src="/assets/images/logo-light.png" alt="" height="17"/>
                     </span>
                 </a>
                 <button type="button" className="btn btn-sm p-0 fs-20 header-item float-end btn-vertical-sm-hover" id="vertical-hover">
@@ -1813,7 +1813,7 @@ return (
                                                     </div>
                                                     <div className="col-sm-4">
                                                         <div className="px-3">
-                                                            <img src="assets/images/user-illustarator-2.png" className="img-fluid" alt=""/>
+                                                            <img src="/assets/images/user-illustarator-2.png" className="img-fluid" alt=""/>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -2190,7 +2190,7 @@ return (
                                         </div>
                                         <div className="col-6">
                                             <div className="text-center">
-                                                <img src="assets/images/illustrator-1.png" className="img-fluid" alt=""/>
+                                                <img src="/assets/images/illustrator-1.png" className="img-fluid" alt=""/>
                                             </div>
                                         </div>
                                     </div>
@@ -3027,26 +3027,26 @@ return (
                             <div className="form-check sidebar-setting card-radio">
                                 <input className="form-check-input" type="radio" name="data-sidebar-image" id="sidebarimg-01" value="img-1"/>
                                 <label className="form-check-label p-0 avatar-sm h-auto" >
-                                    <img src="assets/images/sidebar/img-1.jpg" alt="" className="avatar-md w-auto object-fit-cover"/>
+                                    <img src="/assets/images/sidebar/img-1.jpg" alt="" className="avatar-md w-auto object-fit-cover"/>
                                 </label>
                             </div>
 
                             <div className="form-check sidebar-setting card-radio">
                                 <input className="form-check-input" type="radio" name="data-sidebar-image" id="sidebarimg-02" value="img-2"/>
                                 <label className="form-check-label p-0 avatar-sm h-auto" >
-                                    <img src="assets/images/sidebar/img-2.jpg" alt="" className="avatar-md w-auto object-fit-cover"/>
+                                    <img src="/assets/images/sidebar/img-2.jpg" alt="" className="avatar-md w-auto object-fit-cover"/>
                                 </label>
                             </div>
                             <div className="form-check sidebar-setting card-radio">
                                 <input className="form-check-input" type="radio" name="data-sidebar-image" id="sidebarimg-03" value="img-3"/>
                                 <label className="form-check-label p-0 avatar-sm h-auto" >
-                                    <img src="assets/images/sidebar/img-3.jpg" alt="" className="avatar-md w-auto object-fit-cover"/>
+                                    <img src="/assets/images/sidebar/img-3.jpg" alt="" className="avatar-md w-auto object-fit-cover"/>
                                 </label>
                             </div>
                             <div className="form-check sidebar-setting card-radio">
                                 <input className="form-check-input" type="radio" name="data-sidebar-image" id="sidebarimg-04" value="img-4"/>
                                 <label className="form-check-label p-0 avatar-sm h-auto" >
-                                    <img src="assets/images/sidebar/img-4.jpg" alt="" className="avatar-md w-auto object-fit-cover"/>
+                                    <img src="/assets/images/sidebar/img-4.jpg" alt="" className="avatar-md w-auto object-fit-cover"/>
                                 </label>
                             </div>
                         </div>
