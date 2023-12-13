@@ -225,6 +225,7 @@
                         }),
                     E();
             }),
+
             document.getElementById("topnav-hamburger-icon") && document.getElementById("topnav-hamburger-icon").addEventListener("click", O);
         var e = sessionStorage.getItem("defaultAttribute"),
             e = JSON.parse(e),
@@ -237,6 +238,7 @@
                 });
             });
     }
+    
     function u() {
         feather.replace();
         var e,
