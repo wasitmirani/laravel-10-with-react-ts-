@@ -52,84 +52,114 @@
 @section('content')
 
 <!--=== Start Login Area ===-->
-<div class="login-area">
-    <div class="text-center mb-4">
-        <a href="index.html">
-            <img src="assets/images/logo.svg" alt="logo">
-        </a>
-    </div> 
-    <div class="card rounded-3 border-0 mb-24 mw-560 m-auto">
-        <div class="card-body p-30">
-            <div class="card-title mb-20 pb-20 border-bottom border-color text-center">
-                <h4 class="mb-0 mb-2 fs-20">Login</h4>
-                <p class="text-body fs-14">Welcome back Jacob Smith!</p>
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card overflow-hidden">
+            <div class="row g-0">
+                <div class="col-lg-6">
+                    <div class="p-lg-5 p-4 auth-one-bg h-100">
+                        <div class="bg-overlay"></div>
+                        <div class="position-relative h-100 d-flex flex-column">
+                            <div class="mb-4">
+                                <a href="{{url('/')}}" class="d-block">
+                                    <img src="{{asset('assets/images/logo-light.png')}}" alt="" height="18">
+                                </a>
+                            </div>
+                            <div class="mt-auto">
+                                <div class="mb-3">
+                                    <i class="ri-double-quotes-l display-4 text-success"></i>
+                                </div>
+
+                                <div id="qoutescarouselIndicators" class="carousel slide" data-bs-ride="carousel">
+                                    <div class="carousel-indicators">
+                                        <button type="button" data-bs-target="#qoutescarouselIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                                        <button type="button" data-bs-target="#qoutescarouselIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                        <button type="button" data-bs-target="#qoutescarouselIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                                    </div>
+                                    <div class="carousel-inner text-center text-white-50 pb-5">
+                                        <div class="carousel-item active">
+                                            <p class="fs-15 fst-italic">" Great! Clean code, clean design, easy for customization. Thanks very much! "</p>
+                                        </div>
+                                        <div class="carousel-item">
+                                            <p class="fs-15 fst-italic">" The theme is really great with an amazing customer support."</p>
+                                        </div>
+                                        <div class="carousel-item">
+                                            <p class="fs-15 fst-italic">" Great! Clean code, clean design, easy for customization. Thanks very much! "</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- end carousel -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- end col -->
+
+                <div class="col-lg-6">
+                    <div class="p-lg-5 p-4">
+                        <div>
+                            <h5 class="text-primary">Welcome Back !</h5>
+                            <p class="text-muted">Sign in to continue to Velzon.</p>
+                        </div>
+
+                        <div class="mt-4">
+                            <form action="{{route('login')}}" method="POST">
+                                @csrf
+
+                                <div class="mb-3">
+                                    <label for="username" class="form-label">Username</label>
+                                    <input type="text" class="form-control" id="username" placeholder="Enter username">
+                                </div>
+
+                                <div class="mb-3">
+                                    <div class="float-end">
+                                        <a href="auth-pass-reset-cover.html" class="text-muted">Forgot password?</a>
+                                    </div>
+                                    <label class="form-label" for="password-input">Password</label>
+                                    <div class="position-relative auth-pass-inputgroup mb-3">
+                                        <input type="password" class="form-control pe-5 password-input" placeholder="Enter password" id="password-input">
+                                        <button class="btn btn-link position-absolute end-0 top-0 text-decoration-none shadow-none text-muted password-addon" type="button" id="password-addon"><i class="ri-eye-fill align-middle"></i></button>
+                                    </div>
+                                </div>
+
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="auth-remember-check">
+                                    <label class="form-check-label" for="auth-remember-check">Remember me</label>
+                                </div>
+
+                                <div class="mt-4">
+                                    <button class="btn btn-success w-100" type="submit">Sign In</button>
+                                </div>
+
+                                <div class="mt-4 text-center">
+                                    <div class="signin-other-title">
+                                        <h5 class="fs-13 mb-4 title">Sign In with</h5>
+                                    </div>
+
+                                    <div>
+                                        <button type="button" class="btn btn-primary btn-icon waves-effect waves-light"><i class="ri-facebook-fill fs-16"></i></button>
+                                        <button type="button" class="btn btn-danger btn-icon waves-effect waves-light"><i class="ri-google-fill fs-16"></i></button>
+                                        <button type="button" class="btn btn-dark btn-icon waves-effect waves-light"><i class="ri-github-fill fs-16"></i></button>
+                                        <button type="button" class="btn btn-info btn-icon waves-effect waves-light"><i class="ri-twitter-fill fs-16"></i></button>
+                                    </div>
+                                </div>
+
+                            </form>
+                        </div>
+
+                        <div class="mt-5 text-center">
+                            <p class="mb-0">Don't have an account ? <a href="auth-signup-cover.html" class="fw-semibold text-primary text-decoration-underline"> Signup</a> </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- end col -->
             </div>
-            <div class="bg-primary-transparent p-3 rounded-3 text-center mb-25">
-                <span class="text-dark fs-14 fw-semibold mb-2 d-block">Login Access</span>
-                <p class="text-primary fs-14 mb-0"><span class="text-dark">Email:</span> jacobsmith@dass.com</p>
-                <p class="text-primary fs-14"><span class="text-dark">Password:</span> jacobsmith123456</p>
-            </div>
-            <form>
-                <div class="form-group mb-4">
-                    <label class="fw-semibold fs-14 mb-2 text-dark">User Name<span class="text-danger">*</span></label>
-                    <div class="form-floating">
-                        <input type="text" class="form-control" id="floatingInput" placeholder="Enter User Name">
-                        <label class="text-body fs-12" for="floatingInput">Enter User Name</label>
-                    </div>
-                </div>
-                <div class="form-group mb-4">
-                    <label class="fw-semibold fs-14 mb-2 text-dark">Password <span class="text-danger">*</span></label>
-                    <div class="form-floating position-relative">
-                        <input type="password" class="form-control" id="password-field1" placeholder="Enter Password">
-                        <label class="text-body fs-12" for="password-field1">Enter Password</label>
-                        <span toggle="#password-field1" class="text-body ri-eye-line field-icon toggle-password position-absolute top-50 end-0 fs-20 translate-middle-y" style="right: 10px !important; cursor: pointer;"></span>
-                    </div>
-                </div>
-                <div class="form-group d-sm-flex justify-content-between">
-                    <div class="form-check mb-4">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" style="position: relative; top: -2px;">
-                        <label class="form-check-label fs-14 text-body ms-2" for="flexCheckDefault">
-                            Remember password ? 
-                        </label>
-                    </div>
-                    <div class="mb-4">
-                        <a href="forgot-password.html" class="fs-14 text-primary text-decoration-none">Forgot your password?</a>
-                    </div>
-                </div>
-                <div class="form-group mb-4">
-                    <a href="index.html" class="btn btn-primary rounded-1 w-100 py-3">Login</a>
-                </div>
-                <div class="form-group mb-4 text-center">
-                    <p class="text-body mb-4 fs-14">Don't have an account? <a href="register.html" class="text-primary text-decoration-none">Register</a></p>
-                    <span class="or d-block"><span class="px-3 bg-white fw-medium">OR</span></span>
-                </div>
-                <div class="form-group mb-0 text-center">
-                    <ul class="social-link ps-0 mb-0 list-unstyled">
-                        <li>
-                            <a href="https://www.google.com/" target="_blank" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Google">
-                                <i data-feather="mail"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.facebook.com/" target="_blank" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Facebook">
-                                <i data-feather="facebook"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.twitter.com/" target="_blank" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Twitter">
-                                <i data-feather="twitter"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.linkedin.com/" target="_blank" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Linkedin">
-                                <i data-feather="linkedin"></i>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </form>
+            <!-- end row -->
         </div>
+        <!-- end card -->
     </div>
+    <!-- end col -->
+
 </div>
 <!--=== End Login Area ===-->
 @endsection

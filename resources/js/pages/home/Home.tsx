@@ -1,629 +1,616 @@
 import React, { useEffect,useState  } from 'react';
 // import Helper from "../../utils/helpers";
+import SidebarMenu  from '../../utils/sidebar';
 
 const Home: React.FC = ()=>{
   
     const [is_loading, setIsLoading] = useState(true);
-
+	const sidebar = new SidebarMenu();
 
     useEffect(() => {
-     
+		console.log("useEffect");
+		let data=sidebar.getMenuList();
+		console.log("data");
+		console.log(data);
         setTimeout(() => {
         
            // Call the loadHomeScripts method here
             // Helper.loadHomeScripts();
-            setIsLoading(false); // Update the state variable
+	
+            // setIsLoading(false); // Update the state variable
         }, 1000);
         
       }, []); // Empty dependency array means this useEffect will run once when the component mounts
     
         return (
-            <div className="row justify-content-center">
-						<div className="col-xxl-8 js-grid">
-							<div className="row justify-content-center js-grid">
-								<div className="col-lg-4 col-sm-6">
-									<div className="card status-card border-0 rounded-3 mb-24 cursor-move">
-										<div className="card-body p-25 text-body">
-											<div className="d-flex align-items-center">
-												<div className="flex-shrink-0">
-													<div className="icon rounded-3">
-														<i data-feather="users"></i>
-													</div>
-												</div>
-												<div className="flex-grow-1 ms-3">
-													  <span className="d-block mb-1">Total Users</span>
-													<h3 className="fs-25">15,821</h3>
-													<p className="fw-medium fs-13">User <span className="badge bg-success-transparent text-success mx-1"><i data-feather="trending-up" className="me-1"></i> 4.2%</span> this month</p>
-												</div>
-											</div>
+			<>
+	
+			<div className="row">
+			<div className="col-12">
+				<div className="page-title-box d-sm-flex align-items-center justify-content-between">
+					<h4 className="mb-sm-0">Analytics</h4>
+
+					<div className="page-title-right">
+						<ol className="breadcrumb m-0">
+							<li className="breadcrumb-item"><a href="javascript: void(0);">Dashboards</a></li>
+							<li className="breadcrumb-item active">Analytics</li>
+						</ol>
+					</div>
+
+				</div>
+			</div>
+		  </div>
+
+		<div className="row">
+			<div className="col-xxl-5">
+				<div className="d-flex flex-column h-100">
+					<div className="row h-100">
+						<div className="col-12">
+							<div className="card">
+								<div className="card-body p-0">
+									<div className="alert alert-primary border-0 rounded-0 m-0 d-flex align-items-center" role="alert">
+										<i data-feather="alert-triangle" className="text-primary me-2 icon-sm"></i>
+										<div className="flex-grow-1 text-truncate">
+											Your free trial expired in <b>17</b> days.
 										</div>
-									</div>
-								</div>
-								<div className="col-lg-4 col-sm-6">
-                           
-
-									<div className="card status-card border-0 rounded-3 mb-24 cursor-move">
-										<div className="card-body p-25 text-body">
-											<div className="d-flex align-items-center">
-												<div className="flex-shrink-0">
-													<div className="icon rounded-3">
-														<i data-feather="activity"></i>
-													</div>
-												</div>
-												<div className="flex-grow-1 ms-3">
-													  <span className="d-block mb-1">Live Visitors</span>
-													<h3 className="fs-25"> 30,125.00 </h3>
-													<p className="fw-medium fs-13">Visitor <span className="badge bg-success-transparent text-success mx-1"><i data-feather="trending-up" className="me-1"></i> 5.0%</span> this month</p>
-												</div>
-											</div>
-										</div>
-									</div>
-                                   
-								</div>
-								<div className="col-lg-4 col-sm-6">
-									<div className="card status-card border-0 rounded-3 mb-24 cursor-move">
-										<div className="card-body p-25 text-body">
-											<div className="d-flex align-items-center">
-												<div className="flex-shrink-0">
-													<div className="icon rounded-3">
-														<i data-feather="pie-chart"></i>
-													</div>
-												</div>
-												<div className="flex-grow-1 ms-3">
-													  <span className="d-block mb-1">Bounce Rate</span>
-													<h3 className="fs-25"> 2,11,125 </h3>
-													<p className="fw-medium fs-13">User <span className="badge bg-danger-transparent text-danger mx-1"> <i data-feather="trending-down" className="me-1"></i> 7.6%</span> this month</p>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-
-							<div className="card rounded-3 border-0 audience-report-card mb-24">
-								<div className="card-body p-25">
-									<div className="card-title d-flex align-items-center justify-content-between mb-20 pb-20 border-bottom border-color cursor-move">
-										<h4 className="mb-0">Audience Report</h4>
-
-										<select className="form-select form-control" aria-label="Default select example">
-											<option selected>Today</option>
-											<option value="1">This Week</option>
-											<option value="2">This Month</option>
-											<option value="3">This Year</option>
-										</select>
-									</div>
-
-									<div id="audience_report"></div>
-								</div>
-							</div>
-
-							<div className="row justify-content-center">
-								<div className="col-lg-7">
-									<div className="card rounded-3 border-0 sessions-bounce-card mb-24">
-										<div className="card-body p-25">
-											<div className="card-title d-flex align-items-center justify-content-between mb-20 pb-20 border-bottom border-color cursor-move">
-												<h4 className="mb-0">Top Countries Sessions vs Bounce Rate</h4>
-		
-												<select className="form-select form-control" aria-label="Default select example">
-													<option selected>Today</option>
-													<option value="1">This Week</option>
-													<option value="2">This Month</option>
-													<option value="3">This Year</option>
-												</select>
-											</div>
-		
-											<div id="sessions_bounce"></div>
+										<div className="flex-shrink-0">
+											<a href="pages-pricing.html" className="text-reset text-decoration-underline"><b>Upgrade</b></a>
 										</div>
 									</div>
 
-									<div className="card rounded-3 border-0 total-summary-card mb-24">
-										<div className="card-body p-25">
-											<div className="card-title d-flex align-items-center justify-content-between mb-20 pb-20 border-bottom border-color cursor-move">
-												<h4 className="mb-0">Total Summary</h4>
-		
-												<select className="form-select form-control" aria-label="Default select example">
-													<option selected>Today</option>
-													<option value="1">This Week</option>
-													<option value="2">This Month</option>
-													<option value="3">This Year</option>
-												</select>
-											</div>
-		
-											<ul className="total-summary ps-0 mb-0 list-unstyled o-sortable">
-												<li className="d-flex align-items-center">
-													<div className="flex-shrink-0">
-														<div className="icon">
-															<img src="assets/images/country/usa.png" alt="usa"/>
-														</div>
-													</div>
-													<div className="flex-grow-1 ms-3">
-														<span className="fw-medium mb-2 d-block">USA</span>
-														<div className="progress position-relative overflow-visible rounded-1 cursor-move bg-white1" role="progressbar" aria-label="Example with label" >
-															{/* style="width: 95%" */}
-															<div className="progress-bar rounded-1 bg-success" >
-																<span className="count position-absolute fw-semibold">95%</span>
-															</div>
-														</div>
-													</div>
-												</li>
-												<li className="d-flex align-items-center">
-													<div className="flex-shrink-0">
-														<div className="icon bg-2">
-															<img src="assets/images/country/france.png" alt="france"/>
-														</div>
-													</div>
-													<div className="flex-grow-1 ms-3">
-														<span className="fw-medium mb-2 d-block">France</span>
-														<div className="progress position-relative overflow-visible rounded-1 cursor-move bg-white1" role="progressbar" aria-label="Example with label" >
-															{/* style="width: 85%" */}
-															<div className="progress-bar rounded-1 bg-primary" >
-																<span className="count position-absolute fw-semibold">85%</span>
-															</div>
-														</div>
-													</div>
-												</li>
-												<li className="d-flex align-items-center">
-													<div className="flex-shrink-0">
-														<div className="icon bg-3">
-															<img src="assets/images/country/canada.png" alt="canada"/>
-														</div>
-													</div>
-													<div className="flex-grow-1 ms-3">
-														<span className="fw-medium mb-2 d-block">Canada</span>
-														<div className="progress position-relative overflow-visible rounded-1 cursor-move bg-white1" role="progressbar" aria-label="Example with label" >
-															{/* style="width: 75%" */}
-															<div className="progress-bar rounded-1 bg-warning" >
-																<span className="count position-absolute fw-semibold">75%</span>
-															</div>
-														</div>
-													</div>
-												</li>
-											</ul>
-										</div>
-									</div>
-								</div>
-
-								<div className="col-lg-5">
-									<div className="card rounded-3 border-0 activity-status-card mb-24">
-										<div className="card-body text-body p-25">
-											<div className="card-title d-flex align-items-center justify-content-between mb-20 pb-20 border-bottom border-color cursor-move">
-												<h4 className="mb-0">Activity</h4>
-		
-												<select className="form-select form-control" aria-label="Default select example">
-													<option selected>Today</option>
-													<option value="1">This Week</option>
-													<option value="2">This Month</option>
-													<option value="3">This Year</option>
-												</select>
-											</div>
-		
-											<ul className="list-unstyled ps-0 mb-0 activity-list h-571" data-simplebar>
-												<li className="mb-20">
-													<a href="#" className="d-flex text-decoration-none text-body">
-														<div className="flex-shrink-0">
-															<div className="icon">
-																<i data-feather="user"></i>
-															</div>
-														</div>
-														<div className="flex-grow-1 ms-3">
-															<span className="fw-semibold text-dark d-block mb-1 fs-15">Donald</span>
-															<p>Updated the status of <span className="text-dark">Refund #1234</span> to awaiting customer response</p>
-															<span className="fs-12">1 Min ago</span>
-														</div>
-													</a>
-												</li>
-												<li className="mb-20">
-													<a href="#" className="d-flex text-decoration-none text-body">
-														<div className="flex-shrink-0">
-															<div className="icon">
-																<img src="assets/images/user/user-1.jpg" className="rounded-circle" alt="user-1"/>
-															</div>
-														</div>
-														<div className="flex-grow-1 ms-3">
-															<span className="fw-semibold text-dark d-block mb-1 fs-15">Lucy Peterson</span>
-															<p>Was added to the group, group name is Overtake</p>
-															<span className="fs-12">3 Min ago</span>
-														</div>
-													</a>
-												</li>
-												<li className="mb-20">
-													<a href="#" className="d-flex text-decoration-none text-body">
-														<div className="flex-shrink-0">
-															<div className="icon">
-																<i data-feather="credit-card"></i>
-															</div>
-														</div>
-														<div className="flex-grow-1 ms-3">
-															<span className="fw-semibold text-dark d-block mb-1 fs-15">Joseph Rust</span>
-															<p>Opened new showcase <span className="text-dark">Mannat #112233</span> with theme market</p>
-															<span className="fs-12">6 Min ago</span>
-														</div>
-													</a>
-												</li>
-												<li>
-													<a href="#" className="d-flex text-decoration-none text-body">
-														<div className="flex-shrink-0">
-															<div className="icon">
-																<img src="assets/images/user/user-2.jpg" className="rounded-circle" alt="user-2"/>
-															</div>
-														</div>
-														<div className="flex-grow-1 ms-3">
-															<span className="fw-semibold text-dark d-block mb-1 fs-15">Juhon Dew</span>
-															<p>Updated the status of <span className="text-dark">Refund #1234</span> to awaiting customer response</p>
-															<span className="fs-12">7 Min ago</span>
-														</div>
-													</a>
-												</li>
-												<li className="mb-20">
-													<a href="#" className="d-flex text-decoration-none text-body">
-														<div className="flex-shrink-0">
-															<div className="icon">
-																<i data-feather="alert-circle"></i>
-															</div>
-														</div>
-														<div className="flex-grow-1 ms-3">
-															<span className="fw-semibold text-dark d-block mb-1 fs-15">Warning</span>
-															<p>Was added to the group, group name is <span className="text-dark">Overtake</span></p>
-															<span className="fs-12">10 Min ago</span>
-														</div>
-													</a>
-												</li>
-												<li className="mb-20">
-													<a href="#" className="d-flex text-decoration-none text-body">
-														<div className="flex-shrink-0">
-															<div className="icon">
-																<i data-feather="user"></i>
-															</div>
-														</div>
-														<div className="flex-grow-1 ms-3">
-															<span className="fw-semibold text-dark d-block mb-1 fs-15">Donald</span>
-															<p>Updated the status of <span className="text-dark">Refund #1234</span> to awaiting customer response</p>
-															<span className="fs-12">11 Min ago</span>
-														</div>
-													</a>
-												</li>
-												<li className="mb-20">
-													<a href="#" className="d-flex text-decoration-none text-body">
-														<div className="flex-shrink-0">
-															<div className="icon">
-																<img src="assets/images/user/user-1.jpg" className="rounded-circle" alt="user-1"/>
-															</div>
-														</div>
-														<div className="flex-grow-1 ms-3">
-															<span className="fw-semibold text-dark d-block mb-1 fs-15">Lucy Peterson</span>
-															<p>Was added to the group, group name is Overtake</p>
-															<span className="fs-12">2 Hours ago</span>
-														</div>
-													</a>
-												</li>
-												<li className="mb-20">
-													<a href="#" className="d-flex text-decoration-none text-body">
-														<div className="flex-shrink-0">
-															<div className="icon">
-																<i data-feather="credit-card"></i>
-															</div>
-														</div>
-														<div className="flex-grow-1 ms-3">
-															<span className="fw-semibold text-dark d-block mb-1 fs-15">Joseph Rust</span>
-															<p>Opened new showcase <span className="text-dark">Mannat #112233</span> with theme market</p>
-															<span className="fs-12">3 Hours ago</span>
-														</div>
-													</a>
-												</li>
-												<li>
-													<a href="#" className="d-flex text-decoration-none text-body">
-														<div className="flex-shrink-0">
-															<div className="icon">
-																<img src="assets/images/user/user-2.jpg" className="rounded-circle" alt="user-2"/>
-															</div>
-														</div>
-														<div className="flex-grow-1 ms-3">
-															<span className="fw-semibold text-dark d-block mb-1 fs-15">Juhon Dew</span>
-															<p>Updated the status of <span className="text-dark">Refund #1234</span> to awaiting customer response</p>
-															<span className="fs-12">10 Hours ago</span>
-														</div>
-													</a>
-												</li>
-												<li>
-													<a href="#" className="d-flex text-decoration-none text-body">
-														<div className="flex-shrink-0">
-															<div className="icon">
-																<i data-feather="alert-circle"></i>
-															</div>
-														</div>
-														<div className="flex-grow-1 ms-3">
-															<span className="fw-semibold text-dark d-block mb-1 fs-15">Warning</span>
-															<p>Was added to the group, group name is <span className="text-dark">Overtake</span></p>
-															<span className="fs-12">14 Hours ago</span>
-														</div>
-													</a>
-												</li>
-											</ul>
-										</div>
-									</div>
-								</div>
-							</div>
-
-							<div className="row justify-content-center">
-								<div className="col-lg-6">
-									<div className="card rounded-3 border-0 traffic-sources-card mb-24 table-edit-area">
-										<div className="card-body text-body p-25">
-											<div className="card-title d-flex align-items-center justify-content-between mb-20 pb-20 border-bottom border-color cursor-move">
-												<h4 className="mb-0">Traffic Sources</h4>
-					
-												<select className="form-select form-control" aria-label="Default select example">
-													<option selected>Today</option>
-													<option value="1">This Week</option>
-													<option value="2">This Month</option>
-													<option value="3">This Year</option>
-												</select>
-											</div>
-					
-											<div className="global-table-area">
-												<div className="table-responsive overflow-auto h-452" data-simplebar>
-													<table className="table align-middle table-bordered" >
-														<thead className="text-dark">
-															<tr>
-																<th scope="col">Browser</th>
-																<th scope="col">Sessions</th>
-																<th scope="col">Traffic</th>
-															</tr>
-														</thead>
-														<tbody className="text-body o-sortable">
-															<tr className="cursor-move">
-																<td>
-																	<div className="d-flex align-items-center">
-																		<img className="rounded-3 wh-32" src="assets/images/browsers/chrome.png" alt="chrome"/>
-																		<span className="fw-medium fs-15 ms-3">Chrome</span>
-																	</div>
-																</td>
-																<td className="text-dark"><i data-feather="trending-up" className="text-success up-down-style me-1"></i> 24,458</td>
-																<td>
-																	{/* style="height: 6px;" */}
-																	<div className="progress position-relative overflow-visible rounded-1 cursor-move bg-white1"  role="progressbar" aria-label="Example with label" >
-																		{/* style="width: 90%; height: 6px;" */}
-																		<div className="progress-bar rounded-1 bg-primary" ></div>
-																	</div>
-																</td>
-															</tr>
-															<tr className="cursor-move">
-																<td>
-																	<div className="d-flex align-items-center">
-																		<img className="rounded-3 wh-32" src="assets/images/browsers/firefox.png" alt="firefox"/>
-																		<span className="fw-medium fs-15 ms-3">Firefox</span>
-																	</div>
-																</td>
-																<td className="text-dark"><i data-feather="trending-down" className="text-danger up-down-style me-1"></i> 22,458</td>
-																<td>
-																	{/*  style="height: 6px;"  */}
-																	<div className="progress position-relative overflow-visible rounded-1 cursor-move bg-white1"role="progressbar" aria-label="Example with label">
-																		{/*  style="width: 80%; height: 6px;" */}
-																		<div className="progress-bar rounded-1 bg-primary"></div>
-																	</div>
-																</td>
-															</tr>
-															<tr className="cursor-move">
-																<td>
-																	<div className="d-flex align-items-center">
-																		<img className="rounded-3 wh-32" src="assets/images/browsers/google.png" alt="google"/>
-																		<span className="fw-medium fs-15 ms-3">Google</span>
-																	</div>
-																</td>
-																<td className="text-dark"><i data-feather="trending-up" className="text-success up-down-style me-1"></i> 21,125</td>
-																<td>
-																	{/* style="height: 6px;" */}
-																	<div className="progress position-relative overflow-visible rounded-1 cursor-move bg-white1"  role="progressbar" aria-label="Example with label" >
-																		{/* style="width: 70%; height: 6px;" */}
-																		<div className="progress-bar rounded-1 bg-primary" ></div>
-																	</div>
-																</td>
-															</tr>
-															<tr className="cursor-move">
-																<td>
-																	<div className="d-flex align-items-center">
-																		<img className="rounded-3 wh-32" src="assets/images/browsers/safari.png" alt="safari"/>
-																		<span className="fw-medium fs-15 ms-3">Safari</span>
-																	</div>
-																</td>
-																<td className="text-dark"><i data-feather="trending-down" className="text-danger up-down-style me-1"></i> 20,222</td>
-																<td>
-																{/* style="height: 6px;" */}
-																	<div className="progress position-relative overflow-visible rounded-1 cursor-move bg-white1"  role="progressbar" aria-label="Example with label"  >
-																	{/*  style="width: 60%; height: 6px;" */}
-																		<div className="progress-bar rounded-1 bg-primary"></div>
-																	</div>
-																</td>
-															</tr>
-															<tr className="cursor-move">
-																<td>
-																	<div className="d-flex align-items-center">
-																		<img className="rounded-3 wh-32" src="assets/images/browsers/ubuntu.png" alt="ubuntu"/>
-																		<span className="fw-medium fs-15 ms-3">Ubuntu</span>
-																	</div>
-																</td>
-																<td className="text-dark"><i data-feather="trending-up" className="text-success up-down-style me-1"></i> 19,124</td>
-																<td>
-																{/* style="height: 6px;" */}
-																	<div className="progress position-relative overflow-visible rounded-1 cursor-move bg-white1"  role="progressbar" aria-label="Example with label">
-																		{/* style="width: 50%; height: 6px;" */}
-																		<div className="progress-bar rounded-1 bg-primary" ></div>
-																	</div>
-																</td>
-															</tr>
-															
-														</tbody>
-													</table>
+									<div className="row align-items-end">
+										<div className="col-sm-8">
+											<div className="p-3">
+												<p className="fs-16 lh-base">Upgrade your plan from a <span className="fw-semibold">Free
+														trial</span>, to ‘Premium Plan’ <i className="mdi mdi-arrow-right"></i></p>
+												<div className="mt-3">
+													<a href="pages-pricing.html" className="btn btn-primary">Upgrade
+														Account!</a>
 												</div>
 											</div>
 										</div>
-									</div>
-								</div>
-								<div className="col-lg-6">
-									<div className="card rounded-3 border-0 visitors-countries-card mb-24 table-edit-area">
-										<div className="card-body text-body p-25">
-											<div className="card-title d-flex align-items-center justify-content-between mb-20 pb-20 border-bottom border-color cursor-move">
-												<h4 className="mb-0">Visitors By Countries </h4>
-					
-												<select className="form-select form-control" aria-label="Default select example">
-													<option selected>Today</option>
-													<option value="1">This Week</option>
-													<option value="2">This Month</option>
-													<option value="3">This Year</option>
-												</select>
-											</div>
-					
-											<div className="global-table-area">
-												<div className="table-responsive overflow-auto h-452" data-simplebar>
-													<table className="table align-middle table-bordered" >
-														<thead className="text-dark">
-															<tr>
-																<th scope="col">Countries</th>
-																<th scope="col" className="text-end">Visitors</th>
-															</tr>
-														</thead>
-														<tbody className="text-body o-sortable">
-															<tr className="cursor-move">
-																<td>
-																	<div className="d-flex align-items-center">
-																		<img className="rounded-3 wh-24 rounded-circle" src="assets/images/country/united-states.png" alt="united-states"/>
-																		<span className="fw-medium fs-15 ms-3">United States</span>
-																	</div>
-																</td>
-																<td className="text-dark text-end">
-																	<span className="badge bg-success-transparent text-success fs-12 fw-normal">34,458</span>
-																</td>
-															</tr>
-															
-														</tbody>
-													</table>
-												</div>
+										<div className="col-sm-4">
+											<div className="px-3">
+												<img src="/assets/images/user-illustarator-2.png" className="img-fluid" alt=""/>
 											</div>
 										</div>
 									</div>
-								</div>
-							</div>
-						</div>
-						<div className="col-xxl-4 js-grid">
-							<div className="card rounded-3 border-0 sales-by-locations-card mb-24">
-								<div className="card-body text-body p-25">
-									<div className="card-title d-flex align-items-center justify-content-between mb-20 pb-20 border-bottom border-color cursor-move">
-										<h4 className="mb-0">Live Visitor</h4>
-
-										<select className="form-select form-control" aria-label="Default select example">
-											<option selected>Today</option>
-											<option value="1">This Week</option>
-											<option value="2">This Month</option>
-											<option value="3">This Year</option>
-										</select>
-									</div>
-
-									<div id="sales_by_locations" className="mb-15"></div>
-
-									<ul className="country-progress ps-0 mb-0 list-unstyled o-sortable">
-										<li>
-											<span className="fw-medium mb-2 d-block">United Kingdom</span>
-											<div className="progress position-relative overflow-visible rounded-1 cursor-move bg-white1" role="progressbar" aria-label="Example with label" >
-												{/* style="width: 95%" */}
-												<div className="progress-bar rounded-1 bg-primary" >
-													<span className="count position-absolute fw-medium">95%</span>
-												</div>
-											</div>
-										</li>
-										<li>
-											<span className="fw-medium mb-2 d-block">United States </span>
-											<div className="progress position-relative overflow-visible rounded-1 cursor-move bg-white1" role="progressbar" aria-label="Example with label">
-												{/* style="width: 85%" */}
-												<div className="progress-bar rounded-1 bg-primary" >
-													<span className="count position-absolute fw-medium">85%</span>
-												</div>
-											</div>
-										</li>
-										<li>
-											<span className="fw-medium mb-2 d-block">Canada</span>
-											<div className="progress position-relative overflow-visible rounded-1 cursor-move bg-white1" role="progressbar" aria-label="Example with label">
-												{/* style="width: 75%" */}
-												<div className="progress-bar rounded-1 bg-primary" >
-													<span className="count position-absolute fw-medium">75%</span>
-												</div>
-											</div>
-										</li>
-										<li>
-											<span className="fw-medium mb-2 d-block">Greenland</span>
-											<div className="progress position-relative overflow-visible rounded-1 cursor-move bg-white1" role="progressbar" aria-label="Example with label" >
-												{/* style="width: 65%" */}
-												<div className="progress-bar rounded-1 bg-primary" >
-													<span className="count position-absolute fw-medium">65%</span>
-												</div>
-											</div>
-										</li>
-										<li>
-											<span className="fw-medium mb-2 d-block">Russia</span>
-											<div className="progress position-relative overflow-visible rounded-1 cursor-move bg-white1" role="progressbar" aria-label="Example with label" >
-												{/* style="width: 55%" */}
-												<div className="progress-bar rounded-1 bg-primary" >
-													<span className="count position-absolute fw-medium">55%</span>
-												</div>
-											</div>
-										</li>
-										
-									</ul>
-								</div>
-							</div>
-
-							<div className="card rounded-3 border-0 website-overview-card mb-24">
-								<div className="card-body text-body p-25">
-									<div className="card-title d-flex align-items-center justify-content-between mb-20 pb-20 border-bottom border-color cursor-move">
-										<h4 className="mb-0">Weekly Website Overview</h4>
-
-										<select className="form-select form-control" aria-label="Default select example">
-											<option selected>Today</option>
-											<option value="1">This Week</option>
-											<option value="2">This Month</option>
-											<option value="3">This Year</option>
-										</select>
-									</div>
-
-									<div id="website_overview"></div>
-								</div>
-							</div>
-
-							<div className="card rounded-3 border-0 device-card mb-24">
-								<div className="card-body text-body p-25">
-									<div className="card-title d-flex align-items-center justify-content-between mb-20 pb-20 border-bottom border-color cursor-move">
-										<h4 className="mb-0">Sessions By Device </h4>
-
-										<select className="form-select form-control" aria-label="Default select example">
-											<option selected>Today</option>
-											<option value="1">This Week</option>
-											<option value="2">This Month</option>
-											<option value="3">This Year</option>
-										</select>
-									</div>
-
-									<div id="website_device"></div>
-
-									<ul className="d-flex justify-content-between align-items-center justify-content-center text-center ps-0 mb-0 list-unstyled">
-										<li className="mt-10">
-											<span className="mb-2 text-primary">Mobile</span>
-											<h5 className="fs-16 mb-0">60.50%</h5>
-										</li>
-										<li className="mt-10">
-											<span className="mb-2 text-success">Tablet</span>
-											<h5 className="fs-16 mb-0">15.50%</h5>
-										</li>
-										<li className="mt-10">
-											<span className="mb-2 text-warning">Desktop</span>
-											<h5 className="fs-16 mb-0">18.50%</h5>
-										</li>
-										<li className="mt-10">
-											<span className="mb-2 text-danger">Others</span>
-											<h5 className="fs-16 mb-0">5.50%</h5>
-										</li>
-									</ul>
 								</div>
 							</div>
 						</div>
 					</div>
+
+					<div className="row">
+						<div className="col-md-6">
+							<div className="card card-animate">
+								<div className="card-body">
+									<div className="d-flex justify-content-between">
+										<div>
+											<p className="fw-medium text-muted mb-0">Users</p>
+											<h2 className="mt-4 ff-secondary fw-semibold"><span className="counter-value" data-target="28.05">0</span>k</h2>
+											<p className="mb-0 text-muted"><span className="badge bg-light text-success mb-0">
+													<i className="ri-arrow-up-line align-middle"></i> 16.24 %
+												</span> vs. previous month</p>
+										</div>
+										<div>
+											<div className="avatar-sm flex-shrink-0">
+												<span className="avatar-title bg-primary-subtle rounded-circle fs-2">
+													<i data-feather="users" className="text-primary"></i>
+												</span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div className="col-md-6">
+							<div className="card card-animate">
+								<div className="card-body">
+									<div className="d-flex justify-content-between">
+										<div>
+											<p className="fw-medium text-muted mb-0">Sessions</p>
+											<h2 className="mt-4 ff-secondary fw-semibold"><span className="counter-value" data-target="97.66">0</span>k</h2>
+											<p className="mb-0 text-muted"><span className="badge bg-light text-danger mb-0">
+													<i className="ri-arrow-down-line align-middle"></i> 3.96 %
+												</span> vs. previous month</p>
+										</div>
+										<div>
+											<div className="avatar-sm flex-shrink-0">
+												<span className="avatar-title bg-primary-subtle rounded-circle fs-2">
+													<i data-feather="activity" className="text-primary"></i>
+												</span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div className="row">
+						<div className="col-md-6">
+							<div className="card card-animate">
+								<div className="card-body">
+									<div className="d-flex justify-content-between">
+										<div>
+											<p className="fw-medium text-muted mb-0">Avg. Visit Duration</p>
+											<h2 className="mt-4 ff-secondary fw-semibold"><span className="counter-value" data-target="3">0</span>m
+												<span className="counter-value" data-target="40">0</span>sec
+											</h2>
+											<p className="mb-0 text-muted"><span className="badge bg-light text-danger mb-0">
+													<i className="ri-arrow-down-line align-middle"></i> 0.24 %
+												</span> vs. previous month</p>
+										</div>
+										<div>
+											<div className="avatar-sm flex-shrink-0">
+												<span className="avatar-title bg-primary-subtle rounded-circle fs-2">
+													<i data-feather="clock" className="text-primary"></i>
+												</span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div className="col-md-6">
+							<div className="card card-animate">
+								<div className="card-body">
+									<div className="d-flex justify-content-between">
+										<div>
+											<p className="fw-medium text-muted mb-0">Bounce Rate</p>
+											<h2 className="mt-4 ff-secondary fw-semibold"><span className="counter-value" data-target="33.48">0</span>%</h2>
+											<p className="mb-0 text-muted"><span className="badge bg-light text-success mb-0">
+													<i className="ri-arrow-up-line align-middle"></i> 7.05 %
+												</span> vs. previous month</p>
+										</div>
+										<div>
+											<div className="avatar-sm flex-shrink-0">
+												<span className="avatar-title bg-primary-subtle rounded-circle fs-2">
+													<i data-feather="external-link" className="text-primary"></i>
+												</span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div className="col-xxl-7">
+				<div className="row h-100">
+					<div className="col-xl-6">
+						<div className="card card-height-100">
+							<div className="card-header align-items-center d-flex">
+								<h4 className="card-title mb-0 flex-grow-1">Live Users By Country</h4>
+								<div className="flex-shrink-0">
+									<button type="button" className="btn btn-soft-primary btn-sm">
+										Export Report
+									</button>
+								</div>
+							</div>
+
+
+							<div className="card-body">
+{/* style="height: 252px" */}
+								<div id="users-by-country" data-colors='["--vz-light"]' className="text-center" ></div>
+
+								<div className="table-responsive table-card mt-3">
+									<table className="table table-borderless table-sm table-centered align-middle table-nowrap mb-1">
+										<thead className="text-muted border-dashed border border-start-0 border-end-0 bg-light-subtle">
+											<tr>
+												<th>Duration (Secs)</th>
+												{/* style="width: 30%;" */}
+												<th >Sessions</th>
+												<th >Views</th>
+											</tr>
+										</thead>
+										<tbody className="border-0">
+											<tr>
+												<td>0-30</td>
+												<td>2,250</td>
+												<td>4,250</td>
+											</tr>
+											<tr>
+												<td>31-60</td>
+												<td>1,501</td>
+												<td>2,050</td>
+											</tr>
+											<tr>
+												<td>61-120</td>
+												<td>750</td>
+												<td>1,600</td>
+											</tr>
+											<tr>
+												<td>121-240</td>
+												<td>540</td>
+												<td>1,040</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+
+						</div>
+					</div>
+
+					<div className="col-xl-6">
+						<div className="card card-height-100">
+							<div className="card-header align-items-center d-flex">
+								<h4 className="card-title mb-0 flex-grow-1">Sessions by Countries</h4>
+								<div>
+									<button type="button" className="btn btn-soft-secondary btn-sm">
+										ALL
+									</button>
+									<button type="button" className="btn btn-soft-primary btn-sm">
+										1M
+									</button>
+									<button type="button" className="btn btn-soft-secondary btn-sm">
+										6M
+									</button>
+								</div>
+							</div>
+							<div className="card-body p-0">
+								<div>
+									<div id="countries_charts" data-colors='["--vz-primary", "--vz-primary", "--vz-primary", "--vz-primary", "--vz-primary-rgb, 0.45", "--vz-primary", "--vz-primary", "--vz-primary", "--vz-primary", "--vz-primary"]' className="apex-charts" dir="ltr"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+		<div className="row">
+			<div className="col-xl-6">
+				<div className="card">
+					<div className="card-header border-0 align-items-center d-flex">
+						<h4 className="card-title mb-0 flex-grow-1">Audiences Metrics</h4>
+						<div>
+							<button type="button" className="btn btn-soft-secondary btn-sm">
+								ALL
+							</button>
+							<button type="button" className="btn btn-soft-secondary btn-sm">
+								1M
+							</button>
+							<button type="button" className="btn btn-soft-secondary btn-sm">
+								6M
+							</button>
+							<button type="button" className="btn btn-soft-primary btn-sm">
+								1Y
+							</button>
+						</div>
+					</div>
+					<div className="card-header p-0 border-0 bg-light-subtle">
+						<div className="row g-0 text-center">
+							<div className="col-6 col-sm-4">
+								<div className="p-3 border border-dashed border-start-0">
+									<h5 className="mb-1"><span className="counter-value" data-target="854">0</span>
+										<span className="text-success ms-1 fs-12">49%<i className="ri-arrow-right-up-line ms-1 align-middle"></i></span>
+									</h5>
+									<p className="text-muted mb-0">Avg. Session</p>
+								</div>
+							</div>
+
+							<div className="col-6 col-sm-4">
+								<div className="p-3 border border-dashed border-start-0">
+									<h5 className="mb-1"><span className="counter-value" data-target="1278">0</span>
+										<span className="text-success ms-1 fs-12">60%<i className="ri-arrow-right-up-line ms-1 align-middle"></i></span>
+									</h5>
+									<p className="text-muted mb-0">Conversion Rate</p>
+								</div>
+							</div>
+
+							<div className="col-6 col-sm-4">
+								<div className="p-3 border border-dashed border-start-0 border-end-0">
+									<h5 className="mb-1"><span className="counter-value" data-target="3">0</span>m
+										<span className="counter-value" data-target="40">0</span>sec
+										<span className="text-success ms-1 fs-12">37%<i className="ri-arrow-right-up-line ms-1 align-middle"></i></span>
+									</h5>
+									<p className="text-muted mb-0">Avg. Session Duration</p>
+								</div>
+							</div>
+
+						</div>
+					</div>
+					<div className="card-body p-0 pb-2">
+						<div>
+							<div id="audiences_metrics_charts" data-colors='["--vz-primary", "--vz-light"]' className="apex-charts" dir="ltr"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div className="col-xl-6">
+				<div className="card card-height-100">
+					<div className="card-header align-items-center d-flex">
+						<h4 className="card-title mb-0 flex-grow-1">Audiences Sessions by Country</h4>
+						<div className="flex-shrink-0">
+							<div className="dropdown card-header-dropdown">
+								<a className="text-reset dropdown-btn" href="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+									<span className="fw-semibold text-uppercase fs-12">Sort by: </span><span className="text-muted">Current Week<i className="mdi mdi-chevron-down ms-1"></i></span>
+								</a>
+								<div className="dropdown-menu dropdown-menu-end">
+									<a className="dropdown-item" href="#">Today</a>
+									<a className="dropdown-item" href="#">Last Week</a>
+									<a className="dropdown-item" href="#">Last Month</a>
+									<a className="dropdown-item" href="#">Current Year</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div className="card-body p-0">
+						<div>
+							<div id="audiences-sessions-country-charts" data-colors='["--vz-info", "--vz-primary"]' className="apex-charts" dir="ltr">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div className="row">
+			<div className="col-xl-4">
+				<div className="card card-height-100">
+					<div className="card-header align-items-center d-flex">
+						<h4 className="card-title mb-0 flex-grow-1">Users by Device</h4>
+						<div className="flex-shrink-0">
+							<div className="dropdown card-header-dropdown">
+								<a className="text-reset dropdown-btn" href="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+									<span className="text-muted fs-16"><i className="mdi mdi-dots-vertical align-middle"></i></span>
+								</a>
+								<div className="dropdown-menu dropdown-menu-end">
+									<a className="dropdown-item" href="#">Today</a>
+									<a className="dropdown-item" href="#">Last Week</a>
+									<a className="dropdown-item" href="#">Last Month</a>
+									<a className="dropdown-item" href="#">Current Year</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div className="card-body">
+						<div id="user_device_pie_charts" data-colors='["--vz-primary", "--vz-primary-rgb, 0.60", "--vz-primary-rgb, 0.75"]' className="apex-charts" dir="ltr"></div>
+
+						<div className="table-responsive mt-3">
+							<table className="table table-borderless table-sm table-centered align-middle table-nowrap mb-0">
+								<tbody className="border-0">
+									<tr>
+										<td>
+											<h4 className="text-truncate fs-14 fs-medium mb-0"><i className="ri-stop-fill align-middle fs-18 text-primary me-2"></i>Desktop
+												Users</h4>
+										</td>
+										<td>
+											<p className="text-muted mb-0"><i data-feather="users" className="me-2 icon-sm"></i>78.56k</p>
+										</td>
+										<td className="text-end">
+											<p className="text-success fw-medium fs-12 mb-0"><i className="ri-arrow-up-s-fill fs-5 align-middle"></i>2.08%
+											</p>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<h4 className="text-truncate fs-14 fs-medium mb-0"><i className="ri-stop-fill align-middle fs-18 text-success me-2"></i>Mobile
+												Users</h4>
+										</td>
+										<td>
+											<p className="text-muted mb-0"><i data-feather="users" className="me-2 icon-sm"></i>105.02k</p>
+										</td>
+										<td className="text-end">
+											<p className="text-danger fw-medium fs-12 mb-0"><i className="ri-arrow-down-s-fill fs-5 align-middle"></i>10.52%
+											</p>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<h4 className="text-truncate fs-14 fs-medium mb-0"><i className="ri-stop-fill align-middle fs-18 text-primary me-2"></i>Tablet
+												Users</h4>
+										</td>
+										<td>
+											<p className="text-muted mb-0"><i data-feather="users" className="me-2 icon-sm"></i>42.89k</p>
+										</td>
+										<td className="text-end">
+											<p className="text-danger fw-medium fs-12 mb-0"><i className="ri-arrow-down-s-fill fs-5 align-middle"></i>7.36%
+											</p>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div className="col-xl-4 col-md-6">
+				<div className="card card-height-100">
+					<div className="card-header align-items-center d-flex">
+						<h4 className="card-title mb-0 flex-grow-1">Top Referrals Pages</h4>
+						<div className="flex-shrink-0">
+							<button type="button" className="btn btn-soft-primary btn-sm">
+								Export Report
+							</button>
+						</div>
+					</div>
+
+					<div className="card-body">
+
+						<div className="row align-items-center">
+							<div className="col-6">
+								<h6 className="text-muted text-uppercase fw-semibold text-truncate fs-12 mb-3">
+									Total Referrals Page</h6>
+								<h4 className="fs- mb-0">725,800</h4>
+								<p className="mb-0 mt-2 text-muted"><span className="badge bg-success-subtle text-success mb-0">
+										<i className="ri-arrow-up-line align-middle"></i> 15.72 %
+									</span> vs. previous month</p>
+							</div>
+							<div className="col-6">
+								<div className="text-center">
+									<img src="/assets/images/illustrator-1.png" className="img-fluid" alt=""/>
+								</div>
+							</div>
+						</div>
+						<div className="mt-3 pt-2">
+							<div className="progress progress-lg rounded-pill">
+								{/* style="width: 25%" */}
+								{/* style="width: 25%" */}
+								{/*  style="width: 18%" */}
+								{/* style="width: 22%" */}
+								{/* style="width: 16%" */}
+								{/* style="width: 19%"  */}
+								<div className="progress-bar bg-primary" role="progressbar" ></div>
+								<div className="progress-bar bg-secondary" role="progressbar"  ></div>
+								<div className="progress-bar bg-success" role="progressbar"  ></div>
+								<div className="progress-bar bg-warning" role="progressbar" ></div>
+								<div className="progress-bar bg-danger" role="progressbar" ></div>
+							</div>
+						</div>
+
+						<div className="mt-3 pt-2">
+							<div className="d-flex mb-2">
+								<div className="flex-grow-1">
+									<p className="text-truncate text-muted fs-14 mb-0"><i className="mdi mdi-circle align-middle text-primary me-2"></i>www.google.com
+									</p>
+								</div>
+								<div className="flex-shrink-0">
+									<p className="mb-0">24.58%</p>
+								</div>
+							</div>
+							<div className="d-flex mb-2">
+								<div className="flex-grow-1">
+									<p className="text-truncate text-muted fs-14 mb-0"><i className="mdi mdi-circle align-middle text-secondary me-2"></i>www.youtube.com
+									</p>
+								</div>
+								<div className="flex-shrink-0">
+									<p className="mb-0">17.51%</p>
+								</div>
+							</div>
+							<div className="d-flex mb-2">
+								<div className="flex-grow-1">
+									<p className="text-truncate text-muted fs-14 mb-0"><i className="mdi mdi-circle align-middle text-success me-2"></i>www.meta.com
+									</p>
+								</div>
+								<div className="flex-shrink-0">
+									<p className="mb-0">23.05%</p>
+								</div>
+							</div>
+							<div className="d-flex mb-2">
+								<div className="flex-grow-1">
+									<p className="text-truncate text-muted fs-14 mb-0"><i className="mdi mdi-circle align-middle text-warning me-2"></i>www.medium.com
+									</p>
+								</div>
+								<div className="flex-shrink-0">
+									<p className="mb-0">12.22%</p>
+								</div>
+							</div>
+							<div className="d-flex">
+								<div className="flex-grow-1">
+									<p className="text-truncate text-muted fs-14 mb-0"><i className="mdi mdi-circle align-middle text-danger me-2"></i>Other
+									</p>
+								</div>
+								<div className="flex-shrink-0">
+									<p className="mb-0">17.58%</p>
+								</div>
+							</div>
+						</div>
+
+						<div className="mt-2 text-center">
+							<a href="javascript:void(0);" className="text-muted text-decoration-underline">Show
+								All</a>
+						</div>
+
+					</div>
+				</div>
+			</div>
+
+			<div className="col-xl-4 col-md-6">
+				<div className="card card-height-100">
+					<div className="card-header align-items-center d-flex">
+						<h4 className="card-title mb-0 flex-grow-1">Top Pages</h4>
+						<div className="flex-shrink-0">
+							<div className="dropdown card-header-dropdown">
+								<a className="text-reset dropdown-btn" href="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+									<span className="text-muted fs-16"><i className="mdi mdi-dots-vertical align-middle"></i></span>
+								</a>
+								<div className="dropdown-menu dropdown-menu-end">
+									<a className="dropdown-item" href="#">Today</a>
+									<a className="dropdown-item" href="#">Last Week</a>
+									<a className="dropdown-item" href="#">Last Month</a>
+									<a className="dropdown-item" href="#">Current Year</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div className="card-body">
+						<div className="table-responsive table-card">
+							<table className="table align-middle table-borderless table-centered table-nowrap mb-0">
+								<thead className="text-muted table-light">
+									<tr>
+										<th scope="col" >Active Page</th>
+										<th scope="col">Active</th>
+										<th scope="col">Users</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>
+											<a href="javascript:void(0);" className="link-secondary">/themesbrand/skote-25867</a>
+										</td>
+										<td>99</td>
+										<td>25.3%</td>
+									</tr>
+									<tr>
+										<td>
+											<a href="javascript:void(0);" className="link-secondary">/dashonic/chat-24518</a>
+										</td>
+										<td>86</td>
+										<td>22.7%</td>
+									</tr>
+									<tr>
+										<td>
+											<a href="javascript:void(0);" className="link-secondary">/skote/timeline-27391</a>
+										</td>
+										<td>64</td>
+										<td>18.7%</td>
+									</tr>
+									<tr>
+										<td>
+											<a href="javascript:void(0);" className="link-secondary">/themesbrand/minia-26441</a>
+										</td>
+										<td>53</td>
+										<td>14.2%</td>
+									</tr>
+									<tr>
+										<td>
+											<a href="javascript:void(0);" className="link-secondary">/dashon/dashboard-29873</a>
+										</td>
+										<td>33</td>
+										<td>12.6%</td>
+									</tr>
+									<tr>
+										<td>
+											<a href="javascript:void(0);" className="link-secondary">/doot/chats-29964</a>
+										</td>
+										<td>20</td>
+										<td>10.9%</td>
+									</tr>
+									<tr>
+										<td>
+											<a href="javascript:void(0);" className="link-secondary">/minton/pages-29739</a>
+										</td>
+										<td>10</td>
+										<td>07.3%</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		</>
         )
 }
 

@@ -1,618 +1,721 @@
 import React, {useState} from "react";
 
-const HeaderMenu : React.FC = ()=>{
+export const HeaderMenu : React.FC = ()=>{
         const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
         const handleDropdownToggle = () => {
             setIsDropdownOpen(!isDropdownOpen);
         };
         return (
-            <header className="header-area bg-white mb-24">
-            <div className="row align-items-center">
-                <div className="col-lg-6 col-sm-6">
-                    <div className="header-left-content">
-                        <ul className="list-unstyled ps-0 mb-0 d-flex justify-content-center justify-content-lg-start justify-content-md-start align-items-center">
-                            <li>
-                                <div className="burger-menu d-none d-lg-block">
-                                    <span className="top-bar"></span>
-                                    <span className="middle-bar"></span>
-                                    <span className="bottom-bar"></span>
+            <header id="page-topbar">
+            <div className="layout-width">
+                <div className="navbar-header">
+                    <div className="d-flex">
+        
+                        <div className="navbar-brand-box horizontal-logo">
+                            <a href="index.html" className="logo logo-dark">
+                                <span className="logo-sm">
+                                    <img src="/assets/images/logo-sm.png" alt="" height="22"/>
+                                </span>
+                                <span className="logo-lg">
+                                    <img src="/assets/images/logo-dark.png" alt="" height="17"/>
+                                </span>
+                            </a>
+        
+                            <a href="index.html" className="logo logo-light">
+                                <span className="logo-sm">
+                                    <img src="/assets/images/logo-sm.png" alt="" height="22"/>
+                                </span>
+                                <span className="logo-lg">
+                                    <img src="/assets/images/logo-light.png" alt="" height="17"/>
+                                </span>
+                            </a>
+                        </div>
+        
+                        <button type="button" className="btn btn-sm px-3 fs-16 header-item vertical-menu-btn topnav-hamburger" id="topnav-hamburger-icon">
+                            <span className="hamburger-icon">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </span>
+                        </button>
+                        <form className="app-search d-none d-md-block">
+                            <div className="position-relative">
+                                <input type="text" className="form-control" placeholder="Search..."  id="search-options" value=""/>
+                                <span className="mdi mdi-magnify search-widget-icon"></span>
+                                <span className="mdi mdi-close-circle search-widget-icon search-widget-icon-close d-none" id="search-close-options"></span>
+                            </div>
+                            <div className="dropdown-menu dropdown-menu-lg" id="search-dropdown">
+                               {/*  style="max-height: 320px;" */}
+                                <div data-simplebar>
+        
+                                    <div className="dropdown-header">
+                                        <h6 className="text-overflow text-muted mb-0 text-uppercase">Recent Searches</h6>
+                                    </div>
+        
+                                    <div className="dropdown-item bg-transparent text-wrap">
+                                        <a href="index.html" className="btn btn-soft-secondary btn-sm rounded-pill">how to setup <i className="mdi mdi-magnify ms-1"></i></a>
+                                        <a href="index.html" className="btn btn-soft-secondary btn-sm rounded-pill">buttons <i className="mdi mdi-magnify ms-1"></i></a>
+                                    </div>
+        
+                                    <div className="dropdown-header mt-2">
+                                        <h6 className="text-overflow text-muted mb-1 text-uppercase">Pages</h6>
+                                    </div>
+        
+        
+                                    <a href="javascript:void(0);" className="dropdown-item notify-item">
+                                        <i className="ri-bubble-chart-line align-middle fs-18 text-muted me-2"></i>
+                                        <span>Analytics Dashboard</span>
+                                    </a>
+        
+        
+                                    <a href="javascript:void(0);" className="dropdown-item notify-item">
+                                        <i className="ri-lifebuoy-line align-middle fs-18 text-muted me-2"></i>
+                                        <span>Help Center</span>
+                                    </a>
+        
+        
+                                    <a href="javascript:void(0);" className="dropdown-item notify-item">
+                                        <i className="ri-user-settings-line align-middle fs-18 text-muted me-2"></i>
+                                        <span>My account settings</span>
+                                    </a>
+        
+        
+                                    <div className="dropdown-header mt-2">
+                                        <h6 className="text-overflow text-muted mb-2 text-uppercase">Members</h6>
+                                    </div>
+        
+                                    <div className="notification-list">
+        
+                                        <a href="javascript:void(0);" className="dropdown-item notify-item py-2">
+                                            <div className="d-flex">
+                                                <img src="/assets/images/users/avatar-2.jpg" className="me-3 rounded-circle avatar-xs" alt="user-pic"/>
+                                                <div className="flex-grow-1">
+                                                    <h6 className="m-0">Angela Bernier</h6>
+                                                    <span className="fs-11 mb-0 text-muted">Manager</span>
+                                                </div>
+                                            </div>
+                                        </a>
+        
+                                        <a href="javascript:void(0);" className="dropdown-item notify-item py-2">
+                                            <div className="d-flex">
+                                                <img src="/assets/images/users/avatar-3.jpg" className="me-3 rounded-circle avatar-xs" alt="user-pic"/>
+                                                <div className="flex-grow-1">
+                                                    <h6 className="m-0">David Grasso</h6>
+                                                    <span className="fs-11 mb-0 text-muted">Web Designer</span>
+                                                </div>
+                                            </div>
+                                        </a>
+        
+                                        <a href="javascript:void(0);" className="dropdown-item notify-item py-2">
+                                            <div className="d-flex">
+                                                <img src="/assets/images/users/avatar-5.jpg" className="me-3 rounded-circle avatar-xs" alt="user-pic"/>
+                                                <div className="flex-grow-1">
+                                                    <h6 className="m-0">Mike Bunch</h6>
+                                                    <span className="fs-11 mb-0 text-muted">React Developer</span>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
                                 </div>
-                                <div className="responsive-burger-menu d-block d-lg-none">
-                                    <span className="top-bar"></span>
-                                    <span className="middle-bar"></span>
-                                    <span className="bottom-bar"></span>
+        
+                                <div className="text-center pt-3 pb-1">
+                                    <a href="pages-search-results.html" className="btn btn-primary btn-sm">View All Results
+                                    <i className="ri-arrow-right-line ms-1"></i></a>
                                 </div>
-                            </li>
-                            <li>
-                                <form className="src-form position-relative z-1">
-                                    <input type="text" className="form-control" placeholder="Search Here"/>
-                                    <button className="bg-transparent position-absolute position-absolute top-50 end-0 translate-middle border-0 ps-0 pe-1">
-                                        <i data-feather="search"></i>
-                                    </button>
-                                </form>
-                            </li>
-                        </ul>
+                            </div>
+                        </form>
                     </div>
-                </div>
-                <div className="col-lg-6 col-sm-6">
-                    <div className="header-right-content float-lg-end float-md-end">
-                        <ul className="list-unstyled ps-0 mb-0 d-flex justify-content-center justify-content-lg-end justify-content-md-end align-items-center">
-                            <li>
-                                <div className="dropdown mail languages">
-                                    <button className="btn btn-secondary border-0 p-0" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                        <img src="assets/images/country/usa.png" alt="usa"/>
-                                    </button>
-                                    <div className="dropdown-menu dropdown-lg p-0 border-0 box-shadow">
-                                        <h6 className="dropdown-item-text fs-15 fw-semibold m-0 py-3 border-bottom border-color d-flex justify-content-between align-items-center">
-                                            Language 
-                                            <span className="text-white bg-danger fs-12 py-1 px-1 rounded-1 fw-normal">09</span>
-                                        </h6> 
-                                        
-                                        <div className="notification-menu h-400" data-simplebar>
-                                            <div className=" d-flex justify-content-between">
-                                                <a href="javascript:;" className="dropdown-item py-3">
-                                                    <div className="d-flex align-items-center">
-                                                        <div className="avatar-md rounded-circle text-center flex-shrink-0">
-                                                            <img src="assets/images/country/united-states.png" alt="united-states"/>
-                                                        </div>
-                                                        <div className="flex-grow-1 ms-2 text-truncate">
-                                                            <h6 className="my-0 fs-14 fw-medium">English</h6>
-                                                        </div>
-                                                    </div>
-                                                </a>
-                                                <a href="javascript:;" className="dropdown-item py-3">
-                                                    <div className="d-flex align-items-center">
-                                                        <div className="avatar-md rounded-circle text-center flex-shrink-0">
-                                                            <img src="assets/images/country/canada.png" alt="canada"/>
-                                                        </div>
-                                                        <div className="flex-grow-1 ms-2 text-truncate">
-                                                            <h6 className="my-0 fs-14 fw-medium">Canada</h6>
-                                                        </div>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                            <div className=" d-flex justify-content-between">
-                                                <a href="javascript:;" className="dropdown-item py-3">
-                                                    <div className="d-flex align-items-center">
-                                                        <div className="avatar-md rounded-circle text-center flex-shrink-0">
-                                                            <img src="assets/images/country/china.png" alt="china"/>
-                                                        </div>
-                                                        <div className="flex-grow-1 ms-2 text-truncate">
-                                                            <h6 className="my-0 fs-14 fw-medium">China</h6>
-                                                        </div>
-                                                    </div>
-                                                </a>
-                                                <a href="javascript:;" className="dropdown-item py-3">
-                                                    <div className="d-flex align-items-center">
-                                                        <div className="avatar-md rounded-circle text-center flex-shrink-0">
-                                                            <img src="assets/images/country/france.png" alt="france"/>
-                                                        </div>
-                                                        <div className="flex-grow-1 ms-2 text-truncate">
-                                                            <h6 className="my-0 fs-14 fw-medium">France</h6>
-                                                        </div>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                            <div className=" d-flex justify-content-between">
-                                                <a href="javascript:;" className="dropdown-item py-3">
-                                                    <div className="d-flex align-items-center">
-                                                        <div className="avatar-md rounded-circle text-center flex-shrink-0">
-                                                            <img src="assets/images/country/germany.png" alt="Germany"/>
-                                                        </div>
-                                                        <div className="flex-grow-1 ms-2 text-truncate">
-                                                            <h6 className="my-0 fs-14 fw-medium">Germany</h6>
-                                                        </div>
-                                                    </div>
-                                                </a>
-                                                <a href="javascript:;" className="dropdown-item py-3">
-                                                    <div className="d-flex align-items-center">
-                                                        <div className="avatar-md rounded-circle text-center flex-shrink-0">
-                                                            <img src="assets/images/country/mexico.png" alt="mexico"/>
-                                                        </div>
-                                                        <div className="flex-grow-1 ms-2 text-truncate">
-                                                            <h6 className="my-0 fs-14 fw-medium">Mexico</h6>
-                                                        </div>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                            <div className=" d-flex justify-content-between">
-                                                <a href="javascript:;" className="dropdown-item py-3">
-                                                    <div className="d-flex align-items-center">
-                                                        <div className="avatar-md rounded-circle text-center flex-shrink-0">
-                                                            <img src="assets/images/country/russia.png" alt="russia"/>
-                                                        </div>
-                                                        <div className="flex-grow-1 ms-2 text-truncate">
-                                                            <h6 className="my-0 fs-14 fw-medium">Russia</h6>
-                                                        </div>
-                                                    </div>
-                                                </a>
-                                                <a href="javascript:;" className="dropdown-item py-3">
-                                                    <div className="d-flex align-items-center">
-                                                        <div className="avatar-md rounded-circle text-center flex-shrink-0">
-                                                            <img src="assets/images/country/arabic.png" alt="arabic"/>
-                                                        </div>
-                                                        <div className="flex-grow-1 ms-2 text-truncate">
-                                                            <h6 className="my-0 fs-14 fw-medium">Arabic</h6>
-                                                        </div>
-                                                    </div>
-                                                </a>
-                                            </div>
+        
+                    <div className="d-flex align-items-center">
+        
+                        <div className="dropdown d-md-none topbar-head-dropdown header-item">
+                            <button type="button" className="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle" id="page-header-search-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i className="bx bx-search fs-22"></i>
+                            </button>
+                            <div className="dropdown-menu dropdown-menu-lg dropdown-menu-end p-0" aria-labelledby="page-header-search-dropdown">
+                                <form className="p-3">
+                                    <div className="form-group m-0">
+                                        <div className="input-group">
+                                            <input type="text" className="form-control" placeholder="Search ..." aria-label="Recipient's username"/>
+                                            <button className="btn btn-primary" type="submit"><i className="mdi mdi-magnify"></i></button>
                                         </div>
-                                        <a href="javascript:;" className="dropdown-item text-center text-white border-top border-color pt-2 pb-2 d-block bg-primary rounded-bottom fs-15">
-                                            View all
-                                        </a>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+        
+                        <div className="dropdown ms-1 topbar-head-dropdown header-item">
+                            <button type="button" className="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <img id="header-lang-img" src="/assets/images/flags/us.svg" alt="Header Language" height="20" className="rounded"/>
+                            </button>
+                            <div className="dropdown-menu dropdown-menu-end">
+        
+                                <a href="javascript:void(0);" className="dropdown-item notify-item language py-2" data-lang="en" title="English">
+                                    <img src="/assets/images/flags/us.svg" alt="user-image" className="me-2 rounded" height="18"/>
+                                    <span className="align-middle">English</span>
+                                </a>
+        
+        
+                                <a href="javascript:void(0);" className="dropdown-item notify-item language" data-lang="sp" title="Spanish">
+                                    <img src="/assets/images/flags/spain.svg" alt="user-image" className="me-2 rounded" height="18"/>
+                                    <span className="align-middle">Española</span>
+                                </a>
+        
+        
+                                <a href="javascript:void(0);" className="dropdown-item notify-item language" data-lang="gr" title="German">
+                                    <img src="/assets/images/flags/germany.svg" alt="user-image" className="me-2 rounded" height="18"/> <span className="align-middle">Deutsche</span>
+                                </a>
+        
+        
+                                <a href="javascript:void(0);" className="dropdown-item notify-item language" data-lang="it" title="Italian">
+                                    <img src="/assets/images/flags/italy.svg" alt="user-image" className="me-2 rounded" height="18"/>
+                                    <span className="align-middle">Italiana</span>
+                                </a>
+        
+        
+                                <a href="javascript:void(0);" className="dropdown-item notify-item language" data-lang="ru" title="Russian">
+                                    <img src="/assets/images/flags/russia.svg" alt="user-image" className="me-2 rounded" height="18"/>
+                                    <span className="align-middle">русский</span>
+                                </a>
+        
+        
+                                <a href="javascript:void(0);" className="dropdown-item notify-item language" data-lang="ch" title="Chinese">
+                                    <img src="/assets/images/flags/china.svg" alt="user-image" className="me-2 rounded" height="18"/>
+                                    <span className="align-middle">中国人</span>
+                                </a>
+        
+        
+                                <a href="javascript:void(0);" className="dropdown-item notify-item language" data-lang="fr" title="French">
+                                    <img src="/assets/images/flags/french.svg" alt="user-image" className="me-2 rounded" height="18"/>
+                                    <span className="align-middle">français</span>
+                                </a>
+        
+        
+                                <a href="javascript:void(0);" className="dropdown-item notify-item language" data-lang="ar" title="Arabic">
+                                    <img src="/assets/images/flags/ae.svg" alt="user-image" className="me-2 rounded" height="18"/>
+                                    <span className="align-middle">Arabic</span>
+                                </a>
+                            </div>
+                        </div>
+        
+                        <div className="dropdown topbar-head-dropdown ms-1 header-item">
+                            <button type="button" className="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i className='bx bx-category-alt fs-22'></i>
+                            </button>
+                            <div className="dropdown-menu dropdown-menu-lg p-0 dropdown-menu-end">
+                                <div className="p-3 border-top-0 border-start-0 border-end-0 border-dashed border">
+                                    <div className="row align-items-center">
+                                        <div className="col">
+                                            <h6 className="m-0 fw-semibold fs-15"> Web Apps </h6>
+                                        </div>
+                                        <div className="col-auto">
+                                            <a href="#!" className="btn btn-sm btn-soft-info"> View All Apps
+                                                <i className="ri-arrow-right-s-line align-middle"></i></a>
+                                        </div>
                                     </div>
                                 </div>
-                            </li>
-
-                            <li className="ms-lg-4 ms-md-4 ms-2">
-                                <div className="dropdown mail">
-                                    <button className="btn btn-secondary fullscreen-btn border-0 p-0 position-relative" id="fullscreen-button">
-                                        <span className="maximize">
-                                            <i data-feather="maximize"></i>
-                                        </span>
-                                        <span className="minimize top-50 start-50 translate-middle position-absolute">
-                                            <i data-feather="minimize"></i>
-                                        </span>
-                                    </button>
-                                </div>
-                            </li>
-
-                            <li className="ms-lg-4 ms-md-4 ms-2">
-                                <div className="dropdown mail apps">
-                                    <button className="btn btn-secondary border-0 p-0" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                        <i data-feather="grid"></i>
-                                    </button>
-                                    <div className="dropdown-menu dropdown-lg p-0 border-0 box-shadow">
-                                        <h6 className="dropdown-item-text fs-15 fw-semibold m-0 py-3 border-bottom border-color d-flex justify-content-between align-items-center">
-                                            Apps 
-                                            <span className="text-white bg-danger fs-12 py-1 px-1 rounded-1 fw-normal">12</span>
-                                        </h6> 
-                                        
-                                        <div className="h-255" data-simplebar>
-                                            <div className="apps-menu d-flex flex-wrap align-items-center justify-content-center">
-                                                <a href="javascript:;" className="dropdown-item m-2 border-1">
-                                                    <img src="assets/images/apps/gmail.png" alt="gmail"/>
-                                                    <span className="d-block fs-14 fw-medium text-dark mt-2">Gmail</span>
-                                                </a>
-                                                <a href="javascript:;" className="dropdown-item m-2 border-1">
-                                                    <img src="assets/images/apps/playstore.png" alt="playstore"/>
-                                                    <span className="d-block fs-14 fw-medium text-dark mt-2">Play Store</span>
-                                                </a>
-                                                <a href="javascript:;" className="dropdown-item m-2 border-1">
-                                                    <img src="assets/images/apps/drive.png" alt="drive"/>
-                                                    <span className="d-block fs-14 fw-medium text-dark mt-2">Drive</span>
-                                                </a>
-                                                <a href="javascript:;" className="dropdown-item m-2 border-1">
-                                                    <img src="assets/images/apps/account.png" alt="account"/>
-                                                    <span className="d-block fs-14 fw-medium text-dark mt-2">Account</span>
-                                                </a>
-                                                <a href="javascript:;" className="dropdown-item m-2 border-1">
-                                                    <img src="assets/images/apps/calender.png" alt="calender"/>
-                                                    <span className="d-block fs-14 fw-medium text-dark mt-2">Calender</span>
-                                                </a>
-                                                <a href="javascript:;" className="dropdown-item m-2 border-1">
-                                                    <img src="assets/images/apps/figma.png" alt="figma"/>
-                                                    <span className="d-block fs-14 fw-medium text-dark mt-2">Figma</span>
-                                                </a>
-                                                <a href="javascript:;" className="dropdown-item m-2 border-1">
-                                                    <img src="assets/images/apps/google-sheets.png" alt="google-sheets"/>
-                                                    <span className="d-block fs-14 fw-medium text-dark mt-2">Sheets</span>
-                                                </a>
-                                                <a href="javascript:;" className="dropdown-item m-2 border-1">
-                                                    <img src="assets/images/apps/google.png" alt="google"/>
-                                                    <span className="d-block fs-14 fw-medium text-dark mt-2">Google</span>
-                                                </a>
-                                                <a href="javascript:;" className="dropdown-item m-2 border-1">
-                                                    <img src="assets/images/apps/microsoft-word.png" alt="microsoft-word"/>
-                                                    <span className="d-block fs-14 fw-medium text-dark mt-2">Microsoft</span>
-                                                </a>
-                                                <a href="javascript:;" className="dropdown-item m-2 border-1">
-                                                    <img src="assets/images/apps/powerpoint.png" alt="powerpoint"/>
-                                                    <span className="d-block fs-14 fw-medium text-dark mt-2">Powerpoint</span>
-                                                </a>
-                                                <a href="javascript:;" className="dropdown-item m-2 border-1">
-                                                    <img src="assets/images/apps/sketch.png" alt="sketch"/>
-                                                    <span className="d-block fs-14 fw-medium text-dark mt-2">Sketch</span>
-                                                </a>
-                                                <a href="javascript:;" className="dropdown-item m-2 border-1">
-                                                    <img src="assets/images/apps/translate.png" alt="translate"/>
-                                                    <span className="d-block fs-14 fw-medium text-dark mt-2">Translate</span>
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <a href="javascript:;" className="dropdown-item text-center text-white border-top border-color py-2 d-block bg-primary rounded-bottom z-1 position-relative fs-15">
-                                            View all
-                                        </a>
-                                    </div>
-                                </div>
-                            </li>
-
-                            <li className="ms-lg-4 ms-md-4 ms-2">
-                                <div className="dropdown mail">
-                                    <button className="btn btn-secondary border-0 p-0" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                        <i data-feather="mail"></i>
-                                    </button>
-                                    <div className="dropdown-menu dropdown-lg p-0 border-0 box-shadow">
-                                        <h6 className="dropdown-item-text fs-15 fw-semibold m-0 py-3 border-bottom border-color d-flex justify-content-between align-items-center">
-                                            Email 
-                                            <span className="text-white bg-danger fs-12 py-1 px-1 rounded-1 fw-normal">08</span>
-                                        </h6> 
-                                        
-                                        <div className="notification-menu h-400" data-simplebar>
-                                            <a href="inbox.html" className="dropdown-item py-3">
-                                                <small className="float-end ps-2 text-body fs-12">1 min ago</small>
-                                                <div className="d-flex align-items-center">
-                                                    <div className="avatar-md rounded-circle text-center flex-shrink-0">
-                                                        <i data-feather="shopping-bag"></i>
-                                                    </div>
-                                                    <div className="flex-grow-1 ms-2 text-truncate">
-                                                        <h6 className="my-0 fs-14 fw-medium">Your Order Has Been Shipped</h6>
-                                                        <small className="mb-0 text-body fs-12">Order No: 123456 Has Shipped To Your Delivery Address</small>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                            <a href="inbox.html" className="dropdown-item py-3">
-                                                <small className="float-end ps-2 text-body fs-12">3 min ago</small>
-                                                <div className="d-flex align-items-center">
-                                                    <div className="avatar-md rounded-circle text-center flex-shrink-0">
-                                                        <i data-feather="percent"></i>
-                                                    </div>
-                                                    <div className="flex-grow-1 ms-2 text-truncate">
-                                                        <h6 className="my-0 fs-14 fw-medium">Discount Available</h6>
-                                                        <small className="mb-0 text-body fs-12">Discount Available On Selected Products</small>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                            <a href="inbox.html" className="dropdown-item py-3">
-                                                <small className="float-end ps-2 text-body fs-12">4 min ago</small>
-                                                <div className="d-flex align-items-center">
-                                                    <div className="avatar-md rounded-circle text-center flex-shrink-0">
-                                                        <i data-feather="user-check"></i>
-                                                    </div>
-                                                    <div className="flex-grow-1 ms-2 text-truncate">
-                                                        <h6 className="my-0 fs-14 fw-medium">Account Has Been Verified</h6>
-                                                        <small className="mb-0 text-body fs-12">Your Account Has Been Verified Sucessfully</small>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                            <a href="inbox.html" className="dropdown-item py-3">
-                                                <small className="float-end ps-2 text-body fs-12">6 min ago</small>
-                                                <div className="d-flex align-items-center">
-                                                    <div className="avatar-md rounded-circle text-center flex-shrink-0">
-                                                        <i data-feather="check-circle"></i>
-                                                    </div>
-                                                    <div className="flex-grow-1 ms-2 text-truncate">
-                                                        <h6 className="my-0 fs-14 fw-medium">Order Placed <span className="text-success">ID: #1116773</span></h6>
-                                                        <small className="mb-0 text-body fs-12">Order Placed Successfully</small>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                            <a href="inbox.html" className="dropdown-item py-3">
-                                                <small className="float-end ps-2 text-body fs-12">8 min ago</small>
-                                                <div className="d-flex align-items-center">
-                                                    <div className="avatar-md rounded-circle text-center flex-shrink-0">
-                                                        <i data-feather="clock"></i>
-                                                    </div>
-                                                    <div className="flex-grow-1 ms-2 text-truncate">
-                                                        <h6 className="my-0 fs-14 fw-medium">Order Delayed <span className="text-danger">ID: 7731116</span></h6>
-                                                        <small className="mb-0 text-body fs-12">Order Delayed Unfortunately</small>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                            <a href="inbox.html" className="dropdown-item py-3">
-                                                <small className="float-end ps-2 text-body fs-12">1 min ago</small>
-                                                <div className="d-flex align-items-center">
-                                                    <div className="avatar-md rounded-circle text-center flex-shrink-0">
-                                                        <i data-feather="shopping-bag"></i>
-                                                    </div>
-                                                    <div className="flex-grow-1 ms-2 text-truncate">
-                                                        <h6 className="my-0 fs-14 fw-medium">Your Order Has Been Shipped</h6>
-                                                        <small className="mb-0 text-body fs-12">Order No: 123456 Has Shipped To Your Delivery Address</small>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                            <a href="inbox.html" className="dropdown-item py-3">
-                                                <small className="float-end ps-2 text-body fs-12">3 min ago</small>
-                                                <div className="d-flex align-items-center">
-                                                    <div className="avatar-md rounded-circle text-center flex-shrink-0">
-                                                        <i data-feather="percent"></i>
-                                                    </div>
-                                                    <div className="flex-grow-1 ms-2 text-truncate">
-                                                        <h6 className="my-0 fs-14 fw-medium">Discount Available</h6>
-                                                        <small className="mb-0 text-body fs-12">Discount Available On Selected Products</small>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                            <a href="inbox.html" className="dropdown-item py-3">
-                                                <small className="float-end ps-2 text-body fs-12">4 min ago</small>
-                                                <div className="d-flex align-items-center">
-                                                    <div className="avatar-md rounded-circle text-center flex-shrink-0">
-                                                        <i data-feather="user-check"></i>
-                                                    </div>
-                                                    <div className="flex-grow-1 ms-2 text-truncate">
-                                                        <h6 className="my-0 fs-14 fw-medium">Account Has Been Verified</h6>
-                                                        <small className="mb-0 text-body fs-12">Your Account Has Been Verified Sucessfully</small>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                            <a href="inbox.html" className="dropdown-item py-3">
-                                                <small className="float-end ps-2 text-body fs-12">6 min ago</small>
-                                                <div className="d-flex align-items-center">
-                                                    <div className="avatar-md rounded-circle text-center flex-shrink-0">
-                                                        <i data-feather="check-circle"></i>
-                                                    </div>
-                                                    <div className="flex-grow-1 ms-2 text-truncate">
-                                                        <h6 className="my-0 fs-14 fw-medium">Order Placed <span className="text-success">ID: #1116773</span></h6>
-                                                        <small className="mb-0 text-body fs-12">Order Placed Successfully</small>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                            <a href="inbox.html" className="dropdown-item py-3">
-                                                <small className="float-end ps-2 text-body fs-12">8 min ago</small>
-                                                <div className="d-flex align-items-center">
-                                                    <div className="avatar-md rounded-circle text-center flex-shrink-0">
-                                                        <i data-feather="clock"></i>
-                                                    </div>
-                                                    <div className="flex-grow-1 ms-2 text-truncate">
-                                                        <h6 className="my-0 fs-14 fw-medium">Order Delayed <span className="text-danger">ID: 7731116</span></h6>
-                                                        <small className="mb-0 text-body fs-12">Order Delayed Unfortunately</small>
-                                                    </div>
-                                                </div>
+        
+                                <div className="p-2">
+                                    <div className="row g-0">
+                                        <div className="col">
+                                            <a className="dropdown-icon-item" href="#!">
+                                                <img src="/assets/images/brands/github.png" alt="Github"/>
+                                                <span>GitHub</span>
                                             </a>
                                         </div>
-                                        <a href="inbox.html" className="dropdown-item text-center text-white border-top border-color pt-2 pb-2 d-block bg-primary rounded-bottom fs-15">
-                                            View all
-                                        </a>
+                                        <div className="col">
+                                            <a className="dropdown-icon-item" href="#!">
+                                                <img src="/assets/images/brands/bitbucket.png" alt="bitbucket"/>
+                                                <span>Bitbucket</span>
+                                            </a>
+                                        </div>
+                                        <div className="col">
+                                            <a className="dropdown-icon-item" href="#!">
+                                                <img src="/assets/images/brands/dribbble.png" alt="dribbble"/>
+                                                <span>Dribbble</span>
+                                            </a>
+                                        </div>
+                                    </div>
+        
+                                    <div className="row g-0">
+                                        <div className="col">
+                                            <a className="dropdown-icon-item" href="#!">
+                                                <img src="/assets/images/brands/dropbox.png" alt="dropbox"/>
+                                                <span>Dropbox</span>
+                                            </a>
+                                        </div>
+                                        <div className="col">
+                                            <a className="dropdown-icon-item" href="#!">
+                                                <img src="/assets/images/brands/mail_chimp.png" alt="mail_chimp"/>
+                                                <span>Mail Chimp</span>
+                                            </a>
+                                        </div>
+                                        <div className="col">
+                                            <a className="dropdown-icon-item" href="#!">
+                                                <img src="/assets/images/brands/slack.png" alt="slack"/>
+                                                <span>Slack</span>
+                                            </a>
+                                        </div>
                                     </div>
                                 </div>
-                            </li>
-
-                            <li className="ms-lg-4 ms-md-4 ms-2">
-                            <div className={`dropdown notifications${isDropdownOpen ? ' show' : ''}`}>
-                                                    <button
-                                                        className="btn btn-secondary border-0 p-0 position-relative badge"
-                                                        type="button"
-                                                        onClick={handleDropdownToggle}
-                                                    >
-                                                        <i data-feather="bell"></i>
-                                                    </button>
-                                                    <div className={`dropdown-menu dropdown-lg p-0 border-0 box-shadow${isDropdownOpen ? ' show' : ''}`}>
-                                                        {/* ... your dropdown content ... */}
-                                                        <h6 className="dropdown-item-text fs-15 fw-semibold m-0 py-3 border-bottom border-color d-flex justify-content-between align-items-center">
-                                            Notifications 
-                                            <span className="text-white bg-danger fs-12 py-1 px-1 rounded-1 fw-normal">08</span>
-                                        </h6> 
-                                        
-                                        <div className="notification-menu h-400" >
-                                            <a href="notifications.html" className="dropdown-item py-3">
-                                                <small className="float-end ps-2 text-body fs-12">6 min ago</small>
-                                                <div className="d-flex align-items-center">
-                                                    <div className="avatar-md rounded-circle text-center flex-shrink-0">
-                                                        <i data-feather="check-circle"></i>
-                                                    </div>
-                                                    <div className="flex-grow-1 ms-2 text-truncate">
-                                                        <h6 className="my-0 fs-14 fw-medium">Order Placed <span className="text-success">ID: #1116773</span></h6>
-                                                        <small className="mb-0 text-body fs-12">Order Placed Successfully</small>
-                                                    </div>
+                            </div>
+                        </div>
+        
+                        <div className="dropdown topbar-head-dropdown ms-1 header-item">
+                            <button type="button" className="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle" id="page-header-cart-dropdown" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-haspopup="true" aria-expanded="false">
+                                <i className='bx bx-shopping-bag fs-22'></i>
+                                <span className="position-absolute topbar-badge cartitem-badge fs-10 translate-middle badge rounded-pill bg-info">5</span>
+                            </button>
+                            <div className="dropdown-menu dropdown-menu-xl dropdown-menu-end p-0 dropdown-menu-cart" aria-labelledby="page-header-cart-dropdown">
+                                <div className="p-3 border-top-0 border-start-0 border-end-0 border-dashed border">
+                                    <div className="row align-items-center">
+                                        <div className="col">
+                                            <h6 className="m-0 fs-16 fw-semibold"> My Cart</h6>
+                                        </div>
+                                        <div className="col-auto">
+                                            <span className="badge bg-warning-subtle text-warning fs-13"><span className="cartitem-badge">7</span>
+                                                items</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                {/* style="max-height: 300px;" */}
+                                <div data-simplebar >
+                                    <div className="p-2">
+                                        <div className="text-center empty-cart" id="empty-cart">
+                                            <div className="avatar-md mx-auto my-3">
+                                                <div className="avatar-title bg-info-subtle text-info fs-36 rounded-circle">
+                                                    <i className='bx bx-cart'></i>
                                                 </div>
-                                            </a>
                                             </div>
-                                                        <a href="notification.html" className="dropdown-item text-center text-white border-top border-color pt-2 pb-2 d-block bg-primary rounded-bottom fs-15">
-                                                        View all
+                                            <h5 className="mb-3">Your Cart is Empty!</h5>
+                                            <a href="apps-ecommerce-products.html" className="btn btn-success w-md mb-3">Shop Now</a>
+                                        </div>
+                                        <div className="d-block dropdown-item dropdown-item-cart text-wrap px-3 py-2">
+                                            <div className="d-flex align-items-center">
+                                                <img src="/assets/images/products/img-1.png" className="me-3 rounded-circle avatar-sm p-2 bg-light" alt="user-pic"/>
+                                                <div className="flex-grow-1">
+                                                    <h6 className="mt-0 mb-1 fs-14">
+                                                        <a href="apps-ecommerce-product-details.html" className="text-reset">Branded
+                                                            T-Shirts</a>
+                                                    </h6>
+                                                    <p className="mb-0 fs-12 text-muted">
+                                                        Quantity: <span>10 x $32</span>
+                                                    </p>
+                                                </div>
+                                                <div className="px-2">
+                                                    <h5 className="m-0 fw-normal">$<span className="cart-item-price">320</span></h5>
+                                                </div>
+                                                <div className="ps-2">
+                                                    <button type="button" className="btn btn-icon btn-sm btn-ghost-secondary remove-item-btn"><i className="ri-close-fill fs-16"></i></button>
+                                                </div>
+                                            </div>
+                                        </div>
+        
+                                        <div className="d-block dropdown-item dropdown-item-cart text-wrap px-3 py-2">
+                                            <div className="d-flex align-items-center">
+                                                <img src="/assets/images/products/img-2.png" className="me-3 rounded-circle avatar-sm p-2 bg-light" alt="user-pic"/>
+                                                <div className="flex-grow-1">
+                                                    <h6 className="mt-0 mb-1 fs-14">
+                                                        <a href="apps-ecommerce-product-details.html" className="text-reset">Bentwood Chair</a>
+                                                    </h6>
+                                                    <p className="mb-0 fs-12 text-muted">
+                                                        Quantity: <span>5 x $18</span>
+                                                    </p>
+                                                </div>
+                                                <div className="px-2">
+                                                    <h5 className="m-0 fw-normal">$<span className="cart-item-price">89</span></h5>
+                                                </div>
+                                                <div className="ps-2">
+                                                    <button type="button" className="btn btn-icon btn-sm btn-ghost-secondary remove-item-btn"><i className="ri-close-fill fs-16"></i></button>
+                                                </div>
+                                            </div>
+                                        </div>
+        
+                                        <div className="d-block dropdown-item dropdown-item-cart text-wrap px-3 py-2">
+                                            <div className="d-flex align-items-center">
+                                                <img src="/assets/images/products/img-3.png" className="me-3 rounded-circle avatar-sm p-2 bg-light" alt="user-pic"/>
+                                                <div className="flex-grow-1">
+                                                    <h6 className="mt-0 mb-1 fs-14">
+                                                        <a href="apps-ecommerce-product-details.html" className="text-reset">
+                                                            Borosil Paper Cup</a>
+                                                    </h6>
+                                                    <p className="mb-0 fs-12 text-muted">
+                                                        Quantity: <span>3 x $250</span>
+                                                    </p>
+                                                </div>
+                                                <div className="px-2">
+                                                    <h5 className="m-0 fw-normal">$<span className="cart-item-price">750</span></h5>
+                                                </div>
+                                                <div className="ps-2">
+                                                    <button type="button" className="btn btn-icon btn-sm btn-ghost-secondary remove-item-btn"><i className="ri-close-fill fs-16"></i></button>
+                                                </div>
+                                            </div>
+                                        </div>
+        
+                                        <div className="d-block dropdown-item dropdown-item-cart text-wrap px-3 py-2">
+                                            <div className="d-flex align-items-center">
+                                                <img src="/assets/images/products/img-6.png" className="me-3 rounded-circle avatar-sm p-2 bg-light" alt="user-pic"/>
+                                                <div className="flex-grow-1">
+                                                    <h6 className="mt-0 mb-1 fs-14">
+                                                        <a href="apps-ecommerce-product-details.html" className="text-reset">Gray
+                                                            Styled T-Shirt</a>
+                                                    </h6>
+                                                    <p className="mb-0 fs-12 text-muted">
+                                                        Quantity: <span>1 x $1250</span>
+                                                    </p>
+                                                </div>
+                                                <div className="px-2">
+                                                    <h5 className="m-0 fw-normal">$ <span className="cart-item-price">1250</span></h5>
+                                                </div>
+                                                <div className="ps-2">
+                                                    <button type="button" className="btn btn-icon btn-sm btn-ghost-secondary remove-item-btn"><i className="ri-close-fill fs-16"></i></button>
+                                                </div>
+                                            </div>
+                                        </div>
+        
+                                        <div className="d-block dropdown-item dropdown-item-cart text-wrap px-3 py-2">
+                                            <div className="d-flex align-items-center">
+                                                <img src="/assets/images/products/img-5.png" className="me-3 rounded-circle avatar-sm p-2 bg-light" alt="user-pic"/>
+                                                <div className="flex-grow-1">
+                                                    <h6 className="mt-0 mb-1 fs-14">
+                                                        <a href="apps-ecommerce-product-details.html" className="text-reset">Stillbird Helmet</a>
+                                                    </h6>
+                                                    <p className="mb-0 fs-12 text-muted">
+                                                        Quantity: <span>2 x $495</span>
+                                                    </p>
+                                                </div>
+                                                <div className="px-2">
+                                                    <h5 className="m-0 fw-normal">$<span className="cart-item-price">990</span></h5>
+                                                </div>
+                                                <div className="ps-2">
+                                                    <button type="button" className="btn btn-icon btn-sm btn-ghost-secondary remove-item-btn"><i className="ri-close-fill fs-16"></i></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="p-3 border-bottom-0 border-start-0 border-end-0 border-dashed border" id="checkout-elem">
+                                    <div className="d-flex justify-content-between align-items-center pb-3">
+                                        <h5 className="m-0 text-muted">Total:</h5>
+                                        <div className="px-2">
+                                            <h5 className="m-0" id="cart-item-total">$1258.58</h5>
+                                        </div>
+                                    </div>
+        
+                                    <a href="apps-ecommerce-checkout.html" className="btn btn-success text-center w-100">
+                                        Checkout
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+        
+                        <div className="ms-1 header-item d-none d-sm-flex">
+                            <button type="button" className="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle" data-toggle="fullscreen">
+                                <i className='bx bx-fullscreen fs-22'></i>
+                            </button>
+                        </div>
+        
+                        <div className="ms-1 header-item d-none d-sm-flex">
+                            <button type="button" className="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle light-dark-mode">
+                                <i className='bx bx-moon fs-22'></i>
+                            </button>
+                        </div>
+        
+                        <div className="dropdown topbar-head-dropdown ms-1 header-item" id="notificationDropdown">
+                            <button type="button" className="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle" id="page-header-notifications-dropdown" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-haspopup="true" aria-expanded="false">
+                                <i className='bx bx-bell fs-22'></i>
+                                <span className="position-absolute topbar-badge fs-10 translate-middle badge rounded-pill bg-danger">3<span className="visually-hidden">unread messages</span></span>
+                            </button>
+                            <div className="dropdown-menu dropdown-menu-lg dropdown-menu-end p-0" aria-labelledby="page-header-notifications-dropdown">
+        
+                                <div className="dropdown-head bg-primary bg-pattern rounded-top">
+                                    <div className="p-3">
+                                        <div className="row align-items-center">
+                                            <div className="col">
+                                                <h6 className="m-0 fs-16 fw-semibold text-white"> Notifications </h6>
+                                            </div>
+                                            <div className="col-auto dropdown-tabs">
+                                                <span className="badge bg-light-subtle text-body fs-13"> 4 New</span>
+                                            </div>
+                                        </div>
+                                    </div>
+        
+                                    <div className="px-2 pt-2">
+                                        <ul className="nav nav-tabs dropdown-tabs nav-tabs-custom" data-dropdown-tabs="true" id="notificationItemsTab" role="tablist">
+                                            <li className="nav-item waves-effect waves-light">
+                                                <a className="nav-link active" data-bs-toggle="tab" href="#all-noti-tab" role="tab" aria-selected="true">
+                                                    All (4)
+                                                </a>
+                                            </li>
+                                            <li className="nav-item waves-effect waves-light">
+                                                <a className="nav-link" data-bs-toggle="tab" href="#messages-tab" role="tab" aria-selected="false">
+                                                    Messages
+                                                </a>
+                                            </li>
+                                            <li className="nav-item waves-effect waves-light">
+                                                <a className="nav-link" data-bs-toggle="tab" href="#alerts-tab" role="tab" aria-selected="false">
+                                                    Alerts
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+        
+                                </div>
+        
+                                <div className="tab-content position-relative" id="notificationItemsTabContent">
+                                    <div className="tab-pane fade show active py-2 ps-2" id="all-noti-tab" role="tabpanel">
+                                        {/* style="max-height: 300px;" */}
+                                        <div data-simplebar  className="pe-2">
+                                            <div className="text-reset notification-item d-block dropdown-item position-relative">
+                                                <div className="d-flex">
+                                                    <div className="avatar-xs me-3 flex-shrink-0">
+                                                        <span className="avatar-title bg-info-subtle text-info rounded-circle fs-16">
+                                                            <i className="bx bx-badge-check"></i>
+                                                        </span>
+                                                    </div>
+                                                    <div className="flex-grow-1">
+                                                        <a href="#!" className="stretched-link">
+                                                            <h6 className="mt-0 mb-2 lh-base">Your <b>Elite</b> author Graphic
+                                                                Optimization <span className="text-secondary">reward</span> is
+                                                                ready!
+                                                            </h6>
                                                         </a>
+                                                        <p className="mb-0 fs-11 fw-medium text-uppercase text-muted">
+                                                            <span><i className="mdi mdi-clock-outline"></i> Just 30 sec ago</span>
+                                                        </p>
                                                     </div>
-                                                    </div>
-                                {/* <div className="dropdown notifications">
-                                    <button className="btn btn-secondary border-0 p-0 position-relative badge" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                        <i data-feather="bell"></i>
-                                    </button>
-                                    <div className="dropdown-menu dropdown-lg p-0 border-0 box-shadow">
-                                        <h6 className="dropdown-item-text fs-15 fw-semibold m-0 py-3 border-bottom border-color d-flex justify-content-between align-items-center">
-                                            Notifications 
-                                            <span className="text-white bg-danger fs-12 py-1 px-1 rounded-1 fw-normal">08</span>
-                                        </h6> 
-                                        
-                                        <div className="notification-menu h-400" data-simplebar>
-                                            <a href="notifications.html" className="dropdown-item py-3">
-                                                <small className="float-end ps-2 text-body fs-12">6 min ago</small>
-                                                <div className="d-flex align-items-center">
-                                                    <div className="avatar-md rounded-circle text-center flex-shrink-0">
-                                                        <i data-feather="check-circle"></i>
-                                                    </div>
-                                                    <div className="flex-grow-1 ms-2 text-truncate">
-                                                        <h6 className="my-0 fs-14 fw-medium">Order Placed <span className="text-success">ID: #1116773</span></h6>
-                                                        <small className="mb-0 text-body fs-12">Order Placed Successfully</small>
+                                                    <div className="px-2 fs-15">
+                                                        <div className="form-check notification-check">
+                                                            <input className="form-check-input" type="checkbox" value="" id="all-notification-check01"/>
+                                                            <label className="form-check-label"></label>
+                                                        </div>
                                                     </div>
                                                 </div>
-                                            </a>
-                                            <a href="notifications.html" className="dropdown-item py-3">
-                                                <small className="float-end ps-2 text-body fs-12">8 min ago</small>
-                                                <div className="d-flex align-items-center">
-                                                    <div className="avatar-md rounded-circle text-center flex-shrink-0">
-                                                        <i data-feather="clock"></i>
-                                                    </div>
-                                                    <div className="flex-grow-1 ms-2 text-truncate">
-                                                        <h6 className="my-0 fs-14 fw-medium">Order Delayed <span className="text-danger">ID: 7731116</span></h6>
-                                                        <small className="mb-0 text-body fs-12">Order Delayed Unfortunately</small>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                            <a href="notifications.html" className="dropdown-item py-3">
-                                                <small className="float-end ps-2 text-body fs-12">1 min ago</small>
-                                                <div className="d-flex align-items-center">
-                                                    <div className="avatar-md rounded-circle text-center flex-shrink-0">
-                                                        <i data-feather="shopping-bag"></i>
-                                                    </div>
-                                                    <div className="flex-grow-1 ms-2 text-truncate">
-                                                        <h6 className="my-0 fs-14 fw-medium">Your Order Has Been Shipped</h6>
-                                                        <small className="mb-0 text-body fs-12">Order No: 123456 Has Shipped To Your Delivery Address</small>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                            <a href="notifications.html" className="dropdown-item py-3">
-                                                <small className="float-end ps-2 text-body fs-12">3 min ago</small>
-                                                <div className="d-flex align-items-center">
-                                                    <div className="avatar-md rounded-circle text-center flex-shrink-0">
-                                                        <i data-feather="percent"></i>
-                                                    </div>
-                                                    <div className="flex-grow-1 ms-2 text-truncate">
-                                                        <h6 className="my-0 fs-14 fw-medium">Discount Available</h6>
-                                                        <small className="mb-0 text-body fs-12">Discount Available On Selected Products</small>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                            <a href="notifications.html" className="dropdown-item py-3">
-                                                <small className="float-end ps-2 text-body fs-12">4 min ago</small>
-                                                <div className="d-flex align-items-center">
-                                                    <div className="avatar-md rounded-circle text-center flex-shrink-0">
-                                                        <i data-feather="user-check"></i>
-                                                    </div>
-                                                    <div className="flex-grow-1 ms-2 text-truncate">
-                                                        <h6 className="my-0 fs-14 fw-medium">Account Has Been Verified</h6>
-                                                        <small className="mb-0 text-body fs-12">Your Account Has Been Verified Sucessfully</small>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                            <a href="notifications.html" className="dropdown-item py-3">
-                                                <small className="float-end ps-2 text-body fs-12">6 min ago</small>
-                                                <div className="d-flex align-items-center">
-                                                    <div className="avatar-md rounded-circle text-center flex-shrink-0">
-                                                        <i data-feather="check-circle"></i>
-                                                    </div>
-                                                    <div className="flex-grow-1 ms-2 text-truncate">
-                                                        <h6 className="my-0 fs-14 fw-medium">Order Placed <span className="text-success">ID: #1116773</span></h6>
-                                                        <small className="mb-0 text-body fs-12">Order Placed Successfully</small>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                            <a href="notifications.html" className="dropdown-item py-3">
-                                                <small className="float-end ps-2 text-body fs-12">8 min ago</small>
-                                                <div className="d-flex align-items-center">
-                                                    <div className="avatar-md rounded-circle text-center flex-shrink-0">
-                                                        <i data-feather="clock"></i>
-                                                    </div>
-                                                    <div className="flex-grow-1 ms-2 text-truncate">
-                                                        <h6 className="my-0 fs-14 fw-medium">Order Delayed <span className="text-danger">ID: 7731116</span></h6>
-                                                        <small className="mb-0 text-body fs-12">Order Delayed Unfortunately</small>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                            <a href="notifications.html" className="dropdown-item py-3">
-                                                <small className="float-end ps-2 text-body fs-12">1 min ago</small>
-                                                <div className="d-flex align-items-center">
-                                                    <div className="avatar-md rounded-circle text-center flex-shrink-0">
-                                                        <i data-feather="shopping-bag"></i>
-                                                    </div>
-                                                    <div className="flex-grow-1 ms-2 text-truncate">
-                                                        <h6 className="my-0 fs-14 fw-medium">Your Order Has Been Shipped</h6>
-                                                        <small className="mb-0 text-body fs-12">Order No: 123456 Has Shipped To Your Delivery Address</small>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                            <a href="notifications.html" className="dropdown-item py-3">
-                                                <small className="float-end ps-2 text-body fs-12">3 min ago</small>
-                                                <div className="d-flex align-items-center">
-                                                    <div className="avatar-md rounded-circle text-center flex-shrink-0">
-                                                        <i data-feather="percent"></i>
-                                                    </div>
-                                                    <div className="flex-grow-1 ms-2 text-truncate">
-                                                        <h6 className="my-0 fs-14 fw-medium">Discount Available</h6>
-                                                        <small className="mb-0 text-body fs-12">Discount Available On Selected Products</small>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                            <a href="notifications.html" className="dropdown-item py-3">
-                                                <small className="float-end ps-2 text-body fs-12">4 min ago</small>
-                                                <div className="d-flex align-items-center">
-                                                    <div className="avatar-md rounded-circle text-center flex-shrink-0">
-                                                        <i data-feather="user-check"></i>
-                                                    </div>
-                                                    <div className="flex-grow-1 ms-2 text-truncate">
-                                                        <h6 className="my-0 fs-14 fw-medium">Account Has Been Verified</h6>
-                                                        <small className="mb-0 text-body fs-12">Your Account Has Been Verified Sucessfully</small>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </div>
-                                        <a href="notification.html" className="dropdown-item text-center text-white border-top border-color pt-2 pb-2 d-block bg-primary rounded-bottom fs-15">
-                                            View all
-                                        </a>
-                                    </div>
-                                </div> */}
-                            </li>
-
-                            <li className="ms-lg-4 ms-md-4 ms-2">
-                                <div className="dropdown user-profile">
-                                    <div className="btn border-0 p-0 d-flex align-items-center text-start" data-bs-toggle="dropdown">
-                                        <div className="flex-shrink-0">
-                                            <img className="rounded-circle user" src="assets/images/user/user.png" alt="user"/>
-                                        </div>
-                                        <div className="flex-grow-1 ms-2 d-none d-xxl-block">
-                                            <h3 className="fs-14 mb-0">Jacob Smith</h3>
-                                            <span className="fs-13 text-body">Admin</span>
-                                        </div>
-                                    </div>
-                                    <ul className="dropdown-menu border-0 rounded box-shadow">
-                                        <li>
-                                            <div className=" text-center border-bottom border-color pb-10 mb-10 d-xxl-none">
-                                                <h3 className="fs-14 mb-0">Jacob Smith</h3>
-                                                <span className="fs-13 text-body">Admin</span>
                                             </div>
-                                        </li>
-                                        <li>
-                                            <div className="dropdown-item d-flex align-items-center text-body">
-                                                <i data-feather="dollar-sign"></i>
-                                                <span className="ms-2 fs-14 fw-semibold text-dark">45,8745.48</span>
+        
+                                            <div className="text-reset notification-item d-block dropdown-item position-relative">
+                                                <div className="d-flex">
+                                                    <img src="/assets/images/users/avatar-2.jpg" className="me-3 rounded-circle avatar-xs flex-shrink-0" alt="user-pic"/>
+                                                    <div className="flex-grow-1">
+                                                        <a href="#!" className="stretched-link">
+                                                            <h6 className="mt-0 mb-1 fs-13 fw-semibold">Angela Bernier</h6>
+                                                        </a>
+                                                        <div className="fs-13 text-muted">
+                                                            <p className="mb-1">Answered to your comment on the cash flow forecast's
+                                                                graph 🔔.</p>
+                                                        </div>
+                                                        <p className="mb-0 fs-11 fw-medium text-uppercase text-muted">
+                                                            <span><i className="mdi mdi-clock-outline"></i> 48 min ago</span>
+                                                        </p>
+                                                    </div>
+                                                    <div className="px-2 fs-15">
+                                                        <div className="form-check notification-check">
+                                                            <input className="form-check-input" type="checkbox" value="" id="all-notification-check02"/>
+                                                            <label className="form-check-label" ></label>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
-                                        </li>
-                                        <li>
-                                            <a className="dropdown-item d-flex align-items-center text-body" href="profile.html">
-                                                <i data-feather="user"></i>
-                                                <span className="ms-2 fs-14">Profile</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a className="dropdown-item d-flex align-items-center text-body" href="user-profile.html">
-                                                <i data-feather="command"></i>
-                                                <span className="ms-2 fs-14">User Profile</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a className="dropdown-item d-flex align-items-center text-body" href="team.html">
-                                                <i data-feather="users"></i>
-                                                <span className="ms-2 fs-14">Team</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a className="dropdown-item d-flex align-items-center text-body" href="user.html">
-                                                <i data-feather="list"></i>
-                                                <span className="ms-2 fs-14">User List</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a className="dropdown-item d-flex align-items-center text-body" href="add-user.html">
-                                                <i data-feather="user-plus"></i>
-                                                <span className="ms-2 fs-14">Add User</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a className="dropdown-item d-flex align-items-center text-body" href="account-settings.html">
-                                                <i data-feather="settings"></i>
-                                                <span className="ms-2 fs-14">Settings</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a className="dropdown-item d-flex align-items-center text-body" href="logout.html">
-                                                <i data-feather="log-out"></i>
-                                                <span className="ms-2 fs-14">Logout</span>
-                                            </a>
-                                        </li>
-                                    </ul>
+        
+                                            <div className="text-reset notification-item d-block dropdown-item position-relative">
+                                                <div className="d-flex">
+                                                    <div className="avatar-xs me-3 flex-shrink-0">
+                                                        <span className="avatar-title bg-danger-subtle text-danger rounded-circle fs-16">
+                                                            <i className='bx bx-message-square-dots'></i>
+                                                        </span>
+                                                    </div>
+                                                    <div className="flex-grow-1">
+                                                        <a href="#!" className="stretched-link">
+                                                            <h6 className="mt-0 mb-2 fs-13 lh-base">You have received <b className="text-success">20</b> new messages in the conversation
+                                                            </h6>
+                                                        </a>
+                                                        <p className="mb-0 fs-11 fw-medium text-uppercase text-muted">
+                                                            <span><i className="mdi mdi-clock-outline"></i> 2 hrs ago</span>
+                                                        </p>
+                                                    </div>
+                                                    <div className="px-2 fs-15">
+                                                        <div className="form-check notification-check">
+                                                            <input className="form-check-input" type="checkbox" value="" id="all-notification-check03"/>
+                                                            <label className="form-check-label" ></label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+        
+                                            <div className="text-reset notification-item d-block dropdown-item position-relative">
+                                                <div className="d-flex">
+                                                    <img src="/assets/images/users/avatar-8.jpg" className="me-3 rounded-circle avatar-xs flex-shrink-0" alt="user-pic"/>
+                                                    <div className="flex-grow-1">
+                                                        <a href="#!" className="stretched-link">
+                                                            <h6 className="mt-0 mb-1 fs-13 fw-semibold">Maureen Gibson</h6>
+                                                        </a>
+                                                        <div className="fs-13 text-muted">
+                                                            <p className="mb-1">We talked about a project on linkedin.</p>
+                                                        </div>
+                                                        <p className="mb-0 fs-11 fw-medium text-uppercase text-muted">
+                                                            <span><i className="mdi mdi-clock-outline"></i> 4 hrs ago</span>
+                                                        </p>
+                                                    </div>
+                                                    <div className="px-2 fs-15">
+                                                        <div className="form-check notification-check">
+                                                            <input className="form-check-input" type="checkbox" value="" id="all-notification-check04"/>
+                                                            {/* for="all-notification-check04" */}
+                                                            <label className="form-check-label" ></label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+        
+                                            <div className="my-3 text-center view-all">
+                                                <button type="button" className="btn btn-soft-success waves-effect waves-light">View
+                                                    All Notifications <i className="ri-arrow-right-line align-middle"></i></button>
+                                            </div>
+                                        </div>
+        
+                                    </div>
+        
+                                    <div className="tab-pane fade py-2 ps-2" id="messages-tab" role="tabpanel" aria-labelledby="messages-tab">
+                                        {/*  style="max-height: 300px;" */}
+                                        <div data-simplebar className="pe-2">
+                                            <div className="text-reset notification-item d-block dropdown-item">
+                                                <div className="d-flex">
+                                                    <img src="/assets/images/users/avatar-3.jpg" className="me-3 rounded-circle avatar-xs" alt="user-pic"/>
+                                                    <div className="flex-grow-1">
+                                                        <a href="#!" className="stretched-link">
+                                                            <h6 className="mt-0 mb-1 fs-13 fw-semibold">James Lemire</h6>
+                                                        </a>
+                                                        <div className="fs-13 text-muted">
+                                                            <p className="mb-1">We talked about a project on linkedin.</p>
+                                                        </div>
+                                                        <p className="mb-0 fs-11 fw-medium text-uppercase text-muted">
+                                                            <span><i className="mdi mdi-clock-outline"></i> 30 min ago</span>
+                                                        </p>
+                                                    </div>
+                                                    <div className="px-2 fs-15">
+                                                        <div className="form-check notification-check">
+                                                            <input className="form-check-input" type="checkbox" value="" id="messages-notification-check01"/>
+                                                            <label className="form-check-label" ></label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+        
+                                            <div className="text-reset notification-item d-block dropdown-item">
+                                                <div className="d-flex">
+                                                    <img src="/assets/images/users/avatar-2.jpg" className="me-3 rounded-circle avatar-xs" alt="user-pic"/>
+                                                    <div className="flex-grow-1">
+                                                        <a href="#!" className="stretched-link">
+                                                            <h6 className="mt-0 mb-1 fs-13 fw-semibold">Angela Bernier</h6>
+                                                        </a>
+                                                        <div className="fs-13 text-muted">
+                                                            <p className="mb-1">Answered to your comment on the cash flow forecast's
+                                                                graph 🔔.</p>
+                                                        </div>
+                                                        <p className="mb-0 fs-11 fw-medium text-uppercase text-muted">
+                                                            <span><i className="mdi mdi-clock-outline"></i> 2 hrs ago</span>
+                                                        </p>
+                                                    </div>
+                                                    <div className="px-2 fs-15">
+                                                        <div className="form-check notification-check">
+                                                            <input className="form-check-input" type="checkbox" value="" id="messages-notification-check02"/>
+                                                          {/* for="messages-notification-check02" */}
+                                                            <label className="form-check-label" ></label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+        
+                                            <div className="text-reset notification-item d-block dropdown-item">
+                                                <div className="d-flex">
+                                                    <img src="/assets/images/users/avatar-6.jpg" className="me-3 rounded-circle avatar-xs" alt="user-pic"/>
+                                                    <div className="flex-grow-1">
+                                                        <a href="#!" className="stretched-link">
+                                                            <h6 className="mt-0 mb-1 fs-13 fw-semibold">Kenneth Brown</h6>
+                                                        </a>
+                                                        <div className="fs-13 text-muted">
+                                                            <p className="mb-1">Mentionned you in his comment on 📃 invoice #12501.
+                                                            </p>
+                                                        </div>
+                                                        <p className="mb-0 fs-11 fw-medium text-uppercase text-muted">
+                                                            <span><i className="mdi mdi-clock-outline"></i> 10 hrs ago</span>
+                                                        </p>
+                                                    </div>
+                                                    <div className="px-2 fs-15">
+                                                        <div className="form-check notification-check">
+                                                            <input className="form-check-input" type="checkbox" value="" id="messages-notification-check03"/>
+                                                                {/*  for="messages-notification-check03" */}
+                                                            <label className="form-check-label"></label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+        
+                                            <div className="text-reset notification-item d-block dropdown-item">
+                                                <div className="d-flex">
+                                                    <img src="/assets/images/users/avatar-8.jpg" className="me-3 rounded-circle avatar-xs" alt="user-pic"/>
+                                                    <div className="flex-grow-1">
+                                                        <a href="#!" className="stretched-link">
+                                                            <h6 className="mt-0 mb-1 fs-13 fw-semibold">Maureen Gibson</h6>
+                                                        </a>
+                                                        <div className="fs-13 text-muted">
+                                                            <p className="mb-1">We talked about a project on linkedin.</p>
+                                                        </div>
+                                                        <p className="mb-0 fs-11 fw-medium text-uppercase text-muted">
+                                                            <span><i className="mdi mdi-clock-outline"></i> 3 days ago</span>
+                                                        </p>
+                                                    </div>
+                                                    <div className="px-2 fs-15">
+                                                        <div className="form-check notification-check">
+                                                            <input className="form-check-input" type="checkbox" value="" id="messages-notification-check04"/>
+                                                        {/*  for="messages-notification-check04" */}
+                                                            <label className="form-check-label"></label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+        
+                                            <div className="my-3 text-center view-all">
+                                                <button type="button" className="btn btn-soft-success waves-effect waves-light">View
+                                                    All Messages <i className="ri-arrow-right-line align-middle"></i></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="tab-pane fade p-4" id="alerts-tab" role="tabpanel" aria-labelledby="alerts-tab"></div>
+        
+                                    <div className="notification-actions" id="notification-actions">
+                                        <div className="d-flex text-muted justify-content-center">
+                                            Select <div id="select-content" className="text-body fw-semibold px-1">0</div> Result <button type="button" className="btn btn-link link-danger p-0 ms-3" data-bs-toggle="modal" data-bs-target="#removeNotificationModal">Remove</button>
+                                        </div>
+                                    </div>
                                 </div>
-                            </li>
-                        </ul>
+                            </div>
+                        </div>
+        
+                        <div className="dropdown ms-sm-3 header-item topbar-user">
+                            <button type="button" className="btn" id="page-header-user-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span className="d-flex align-items-center">
+                                    <img className="rounded-circle header-profile-user" src="/assets/images/users/avatar-1.jpg" alt="Header Avatar"/>
+                                    <span className="text-start ms-xl-2">
+                                        <span className="d-none d-xl-inline-block ms-1 fw-medium user-name-text">Anna Adame</span>
+                                        <span className="d-none d-xl-block ms-1 fs-12 user-name-sub-text">Founder</span>
+                                    </span>
+                                </span>
+                            </button>
+                            <div className="dropdown-menu dropdown-menu-end">
+        
+                                <h6 className="dropdown-header">Welcome Anna!</h6>
+                                <a className="dropdown-item" href="pages-profile.html"><i className="mdi mdi-account-circle text-muted fs-16 align-middle me-1"></i> <span className="align-middle">Profile</span></a>
+                                <a className="dropdown-item" href="apps-chat.html"><i className="mdi mdi-message-text-outline text-muted fs-16 align-middle me-1"></i> <span className="align-middle">Messages</span></a>
+                                <a className="dropdown-item" href="apps-tasks-kanban.html"><i className="mdi mdi-calendar-check-outline text-muted fs-16 align-middle me-1"></i> <span className="align-middle">Taskboard</span></a>
+                                <a className="dropdown-item" href="pages-faqs.html"><i className="mdi mdi-lifebuoy text-muted fs-16 align-middle me-1"></i> <span className="align-middle">Help</span></a>
+                                <div className="dropdown-divider"></div>
+                                <a className="dropdown-item" href="pages-profile.html"><i className="mdi mdi-wallet text-muted fs-16 align-middle me-1"></i> <span className="align-middle">Balance : <b>$5971.67</b></span></a>
+                                <a className="dropdown-item" href="pages-profile-settings.html"><span className="badge bg-success-subtle text-success mt-1 float-end">New</span><i className="mdi mdi-cog-outline text-muted fs-16 align-middle me-1"></i> <span className="align-middle">Settings</span></a>
+                                <a className="dropdown-item" href="auth-lockscreen-basic.html"><i className="mdi mdi-lock text-muted fs-16 align-middle me-1"></i> <span className="align-middle">Lock screen</span></a>
+                                <a className="dropdown-item" href="auth-logout-basic.html"><i className="mdi mdi-logout text-muted fs-16 align-middle me-1"></i> <span className="align-middle" data-key="t-logout">Logout</span></a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -621,4 +724,3 @@ const HeaderMenu : React.FC = ()=>{
         );
 }
 
-export default HeaderMenu;
