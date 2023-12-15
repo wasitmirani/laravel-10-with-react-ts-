@@ -5,6 +5,8 @@ import {Routes as ReactRoutes, Route,BrowserRouter as Router, Routes} from 'reac
 import {routes}  from "../routes/router";
 import Sidebar from '@/utils/sidebar';
 import { MenuItem } from '@/interfaces/sidebar_interface';
+import { BrowserRouter } from "react-router-dom";
+
 
 const Master : React.FC=()=>{
 // const app_routes = useRoutes(routes);
@@ -18,7 +20,8 @@ setMenu(menuList);
 }, []); 
 return (
     <>
-     <Router>
+     {/* <Routes> */}
+     <BrowserRouter>
     <div id="layout-wrapper">
 
 {/* Header */}
@@ -76,8 +79,8 @@ return (
         </div>
 
     </div>
-    </Router>
-
+    {/* </Routes> */}
+    </BrowserRouter>
     </>
 );
 }
