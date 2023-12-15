@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import SideBarMenu from './components/sidebar';
 import {HeaderMenu} from './components/header';
-import {Routes as ReactRoutes, Route,BrowserRouter as Router, Routes} from 'react-router-dom';;
+import {Routes as ReactRoutes, Route} from 'react-router-dom';
 import {routes}  from "../routes/router";
 import Sidebar from '@/utils/sidebar';
 import { MenuItem } from '@/interfaces/sidebar_interface';
@@ -65,6 +65,7 @@ return (
                     {/* routes */}
              
                     <ReactRoutes>
+
                     {routes.map((route,i) => {
                         return (
                             <Route   path={route.path} key={i} element={<route.page.component />}></Route>
