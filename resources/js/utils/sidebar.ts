@@ -41,7 +41,8 @@ class Sidebar {
             this.setHeadingMenu('Analytics'),
             this.setMultiMenu('Dashboards', 'fa-solid fa-house', 'dashboard-view',
                 [
-                    this.setSubMenu('Overview', '/overview/dashboard', 'somePermission'),
+                    this.setSubMenu('Dashboard', '/home', 'somePermission'),
+                    this.setSubMenu('Overview', '/dashboard', 'somePermission'),
                     // Add more sub-menu items as needed
                 ],
             ),

@@ -1,6 +1,5 @@
 import { StrictMode } from "react";
 import * as ReactDOM from "react-dom/client";
-import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 
 import App from './App';
 
@@ -11,11 +10,10 @@ const root = ReactDOM.createRoot(
 );
 root.render(
 
-   <Router>
+
 
     <App />
 
- </Router>
 
 );
 
