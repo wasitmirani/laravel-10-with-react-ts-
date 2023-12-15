@@ -12,10 +12,9 @@ const root = ReactDOM.createRoot(
 root.render(
 
    <Router>
-   <Routes>
-    
-     <Route path="/*" element={<App />} />
-   </Routes>
+
+    <App />
+
  </Router>
 
 );
