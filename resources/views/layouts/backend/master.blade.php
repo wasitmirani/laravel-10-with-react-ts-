@@ -33,7 +33,6 @@
                 <script src="{{ asset('/assets/libs/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
 
 
-
                 <!-- Vector map-->
                 <script src="{{ asset('/assets/libs/jsvectormap/js/jsvectormap.min.js')}}"></script>
                 <script src="{{ asset('/assets/libs/jsvectormap/maps/world-merc.js')}}"></script>
@@ -58,7 +57,7 @@
                     const script = document.createElement('script');
                     script.src = scriptUrl;
                     document.head.appendChild(script);
-                  }, index * 120); // Adjust the delay as needed
+                  }, index * 200); // Adjust the delay as needed
                 });
               </script>
     </body>

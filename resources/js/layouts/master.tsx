@@ -12,9 +12,10 @@ const Master : React.FC=()=>{
 // const app_routes = useRoutes(routes);
 
 const [menu, setMenu] = useState<MenuItem[]>([]);
+const sidebar = new Sidebar();
 useEffect(() => {
 // Assuming getMenuList is a synchronous function
-const sidebar = new Sidebar();
+
 const menuList = sidebar.getMenuList();
 setMenu(menuList);
 }, []); 

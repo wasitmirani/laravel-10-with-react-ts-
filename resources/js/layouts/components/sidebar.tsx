@@ -53,7 +53,7 @@ const SideBarMenu : React.FC<Props>=  ({ menu }) =>{
 							<span data-key={'t-'+index}>{menu_item.title}</span>
 							</li>
 						) : menu_item.type === 'single' ? (
-							<li key={index} className="nav-item">
+							<li key={'single-'+index} className="nav-item">
 							<Link className="nav-link menu-link" to={`${menu_item.link}`}>
 								<i className={menu_item.icon + ' icon-dual'}></i>
 								<span data-key={'t-'+index}>{menu_item.title}</span>
@@ -71,7 +71,7 @@ const SideBarMenu : React.FC<Props>=  ({ menu }) =>{
 								 <ul className="nav nav-sm flex-column">
 									{menu_item?.sub_menu?.map((item)=>(
 						  			<li  className="nav-item">
-										 <Link to={item.link} className="nav-link" data-key="t-analytics"> {item.title} </Link>
+										 <Link to={item.link} className="nav-link" data-key={item.title}> {item.title} </Link>
 									 </li>
 									))}
 									

@@ -1,11 +1,7 @@
 import React, {useState} from "react";
 
 export const HeaderMenu : React.FC = ()=>{
-        const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-
-        const handleDropdownToggle = () => {
-            setIsDropdownOpen(!isDropdownOpen);
-        };
+       
         return (
             <header id="page-topbar">
             <div className="layout-width">
