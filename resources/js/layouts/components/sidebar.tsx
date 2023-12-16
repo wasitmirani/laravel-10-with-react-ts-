@@ -69,8 +69,8 @@ const SideBarMenu : React.FC<Props>=  ({ menu }) =>{
 							 </a>
 							 <div className="collapse menu-dropdown" id={'sidebar'+index}>
 								 <ul className="nav nav-sm flex-column">
-									{menu_item?.sub_menu?.map((item)=>(
-						  			<li  className="nav-item">
+									{menu_item?.sub_menu?.map((item,index)=>(
+						  			<li key={index}  className="nav-item">
 										 <Link to={item.link} className="nav-link" data-key={item.title}> {item.title} </Link>
 									 </li>
 									))}
