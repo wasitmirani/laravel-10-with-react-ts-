@@ -101,14 +101,24 @@
                             <h5 class="text-primary">Welcome Back !</h5>
                             <p class="text-muted">Sign in to continue to Velzon.</p>
                         </div>
-
+                       
+                        @if ($errors->any())
+                        @foreach ($errors->all() as $error)
+                            <div class="text-danger">{{$error}}</div>
+                        @endforeach
+                          @endif
                         <div class="mt-4">
                             <form action="{{route('login')}}" method="POST">
                                 @csrf
 
                                 <div class="mb-3">
                                     <label for="username" class="form-label">Username</label>
-                                    <input type="text" class="form-control" id="username" placeholder="Enter username">
+                                    <input type="text" class="form-control" name="email" id="username" value="{{ old('email') }}" required placeholder="Enter username">
+                                    @error('email')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
                                 </div>
 
                                 <div class="mb-3">
@@ -117,9 +127,15 @@
                                     </div>
                                     <label class="form-label" for="password-input">Password</label>
                                     <div class="position-relative auth-pass-inputgroup mb-3">
-                                        <input type="password" class="form-control pe-5 password-input" placeholder="Enter password" id="password-input">
+                                        <input type="password" name="password" class="form-control pe-5 password-input" placeholder="Enter password" id="password-input">
                                         <button class="btn btn-link position-absolute end-0 top-0 text-decoration-none shadow-none text-muted password-addon" type="button" id="password-addon"><i class="ri-eye-fill align-middle"></i></button>
+                                   
                                     </div>
+                                    @error('password')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
                                 </div>
 
                                 <div class="form-check">

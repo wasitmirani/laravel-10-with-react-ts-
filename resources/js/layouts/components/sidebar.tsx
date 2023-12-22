@@ -14,7 +14,7 @@ const SideBarMenu : React.FC<Props>=  ({ menu }) =>{
 
             <div className="navbar-brand-box">
 
-                <a href="index.html" className="logo logo-dark">
+                <Link to="/" className="logo logo-dark">
                     <span className="logo-sm">
 						<h1>ShipGo</h1>
                         {/* <img src="/assets/images/logo-sm.png" alt="" height="22"/> */}
@@ -23,9 +23,9 @@ const SideBarMenu : React.FC<Props>=  ({ menu }) =>{
 						<h1>ShipGo</h1>
                         {/* <img src="/assets/images/logo-dark.png" alt="" height="17"/> */}
                     </span>
-                </a>
+                </Link>
 
-                <a href="index.html" className="logo logo-light">
+                <Link to="/" className="logo logo-light">
                     <span className="logo-sm">
 					<h1>ShipGo</h1>
                         {/* <img src="/assets/images/logo-sm.png" alt="" height="22"/> */}
@@ -34,7 +34,7 @@ const SideBarMenu : React.FC<Props>=  ({ menu }) =>{
 					<h1>ShipGo</h1>
                         {/* <img src="/assets/images/logo-light.png" alt="" height="17"/> */}
                     </span>
-                </a>
+                </Link>
                 <button type="button" className="btn btn-sm p-0 fs-20 header-item float-end btn-vertical-sm-hover" id="vertical-hover">
                     <i className="ri-record-circle-line"></i>
                 </button>
@@ -46,32 +46,45 @@ const SideBarMenu : React.FC<Props>=  ({ menu }) =>{
                     <div id="two-column-menu">
                     </div>
                     <ul className="navbar-nav" id="navbar-nav">
-					
+					{/* <li className="nav-item">
+							  <Link className="nav-link menu-link" to='/app/home'>
+							  <i className='icon-dual'></i> <span >
+								Home
+							  </span>
+							  </Link>
+				</li>
+				<li className="nav-item">
+							  <Link className="nav-link menu-link" to='/app/dashboard'>
+							  <i className='icon-dual'></i> <span >
+							Dashboard
+							  </span>
+							  </Link>
+				</li> */}
 					{menu && menu.map((menu_item,index) => (
 						menu_item.type === 'heading' ? (
-							<li key={'heading-'+index} className="menu-title">
-							<span data-key={'t-'+index}>{menu_item.title}</span>
+							<li className="menu-title">
+							<span>{menu_item.title}</span>
 							</li>
 						) : menu_item.type === 'single' ? (
-							<li key={'single-'+index} className="nav-item">
-							<Link className="nav-link menu-link" to={`${menu_item.link}`}>
-								<i className={menu_item.icon + ' icon-dual'}></i>
-								<span data-key={'t-'+index}>{menu_item.title}</span>
-							</Link>
-							</li>
+						
+							  <li className="nav-item">
+							  <Link className="nav-link menu-link" to={`${menu_item.link}`}>
+							  <i className={menu_item.icon + ' icon-dual'}></i> <span>{menu_item.title}</span>
+							  </Link>
+						  </li>
 						) : menu_item.type === 'multi' ? (
 							
 							 <li className="nav-item">
-							 <a className="nav-link menu-link" href={'#sidebar'+index} data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls={'sidebar'+index}>
-								 {/* <i data-feather="home" className="icon-dual"></i>  */}
+							 <Link className="nav-link menu-link" to={'#sidebar'+index} data-bs-toggle="collapse"  aria-controls={'sidebar'+index}>
+								 {/*  <i data-feather="home" className="icon-dual"></i>   */}
 								 <i className={menu_item.icon + ' icon-dual'}></i>
-								 <span data-key={'t-'+index}>{menu_item.title}</span>
-							 </a>
+								 <span >{menu_item.title}</span>
+							 </Link>
 							 <div className="collapse menu-dropdown" id={'sidebar'+index}>
 								 <ul className="nav nav-sm flex-column">
-									{menu_item?.sub_menu?.map((item,index)=>(
-						  			<li key={index}  className="nav-item">
-										 <Link to={item.link} className="nav-link" data-key={item.title}> {item.title} </Link>
+									{menu_item?.sub_menu?.map((item,i)=>(
+						  			<li  className="nav-item">
+										 <Link to={item.link} className="nav-link"> {item.title} </Link>
 									 </li>
 									))}
 									
@@ -80,9 +93,6 @@ const SideBarMenu : React.FC<Props>=  ({ menu }) =>{
 						 </li>
 						) : null
 						))}
-                       
-						
-                       
 
                     </ul>
                 </div>

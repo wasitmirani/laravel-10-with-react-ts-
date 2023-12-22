@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import { Link } from "react-router-dom";
 
 export const HeaderMenu : React.FC = ()=>{
        
@@ -9,23 +10,23 @@ export const HeaderMenu : React.FC = ()=>{
                     <div className="d-flex">
         
                         <div className="navbar-brand-box horizontal-logo">
-                            <a href="index.html" className="logo logo-dark">
+                            <Link to="/" className="logo logo-dark">
                                 <span className="logo-sm">
                                     <img src="/assets/images/logo-sm.png" alt="" height="22"/>
                                 </span>
                                 <span className="logo-lg">
                                     <img src="/assets/images/logo-dark.png" alt="" height="17"/>
                                 </span>
-                            </a>
+                            </Link>
         
-                            <a href="index.html" className="logo logo-light">
+                            <Link to="/" className="logo logo-light">
                                 <span className="logo-sm">
                                     <img src="/assets/images/logo-sm.png" alt="" height="22"/>
                                 </span>
                                 <span className="logo-lg">
                                     <img src="/assets/images/logo-light.png" alt="" height="17"/>
                                 </span>
-                            </a>
+                            </Link>
                         </div>
         
                         <button type="button" className="btn btn-sm px-3 fs-16 header-item vertical-menu-btn topnav-hamburger" id="topnav-hamburger-icon">
@@ -50,8 +51,8 @@ export const HeaderMenu : React.FC = ()=>{
                                     </div>
         
                                     <div className="dropdown-item bg-transparent text-wrap">
-                                        <a href="index.html" className="btn btn-soft-secondary btn-sm rounded-pill">how to setup <i className="mdi mdi-magnify ms-1"></i></a>
-                                        <a href="index.html" className="btn btn-soft-secondary btn-sm rounded-pill">buttons <i className="mdi mdi-magnify ms-1"></i></a>
+                                        <Link to="/" className="btn btn-soft-secondary btn-sm rounded-pill">how to setup <i className="mdi mdi-magnify ms-1"></i></Link>
+                                        <Link to="/" className="btn btn-soft-secondary btn-sm rounded-pill">buttons <i className="mdi mdi-magnify ms-1"></i></Link>
                                     </div>
         
                                     <div className="dropdown-header mt-2">
@@ -59,22 +60,22 @@ export const HeaderMenu : React.FC = ()=>{
                                     </div>
         
         
-                                    <a href="javascript:void(0);" className="dropdown-item notify-item">
+                                    <Link to="javascript:void(0);" className="dropdown-item notify-item">
                                         <i className="ri-bubble-chart-line align-middle fs-18 text-muted me-2"></i>
                                         <span>Analytics Dashboard</span>
-                                    </a>
+                                    </Link>
         
         
-                                    <a href="javascript:void(0);" className="dropdown-item notify-item">
+                                    <Link to="javascript:void(0);" className="dropdown-item notify-item">
                                         <i className="ri-lifebuoy-line align-middle fs-18 text-muted me-2"></i>
                                         <span>Help Center</span>
-                                    </a>
+                                    </Link>
         
         
-                                    <a href="javascript:void(0);" className="dropdown-item notify-item">
+                                    <Link to="javascript:void(0);" className="dropdown-item notify-item">
                                         <i className="ri-user-settings-line align-middle fs-18 text-muted me-2"></i>
                                         <span>My account settings</span>
-                                    </a>
+                                    </Link>
         
         
                                     <div className="dropdown-header mt-2">
@@ -83,7 +84,7 @@ export const HeaderMenu : React.FC = ()=>{
         
                                     <div className="notification-list">
         
-                                        <a href="javascript:void(0);" className="dropdown-item notify-item py-2">
+                                        <Link to="javascript:void(0);" className="dropdown-item notify-item py-2">
                                             <div className="d-flex">
                                                 <img src="/assets/images/users/avatar-2.jpg" className="me-3 rounded-circle avatar-xs" alt="user-pic"/>
                                                 <div className="flex-grow-1">
@@ -91,9 +92,9 @@ export const HeaderMenu : React.FC = ()=>{
                                                     <span className="fs-11 mb-0 text-muted">Manager</span>
                                                 </div>
                                             </div>
-                                        </a>
+                                        </Link>
         
-                                        <a href="javascript:void(0);" className="dropdown-item notify-item py-2">
+                                        <Link to="javascript:void(0);" className="dropdown-item notify-item py-2">
                                             <div className="d-flex">
                                                 <img src="/assets/images/users/avatar-3.jpg" className="me-3 rounded-circle avatar-xs" alt="user-pic"/>
                                                 <div className="flex-grow-1">
@@ -101,9 +102,9 @@ export const HeaderMenu : React.FC = ()=>{
                                                     <span className="fs-11 mb-0 text-muted">Web Designer</span>
                                                 </div>
                                             </div>
-                                        </a>
+                                        </Link>
         
-                                        <a href="javascript:void(0);" className="dropdown-item notify-item py-2">
+                                        <Link to="javascript:void(0);" className="dropdown-item notify-item py-2">
                                             <div className="d-flex">
                                                 <img src="/assets/images/users/avatar-5.jpg" className="me-3 rounded-circle avatar-xs" alt="user-pic"/>
                                                 <div className="flex-grow-1">
@@ -111,13 +112,13 @@ export const HeaderMenu : React.FC = ()=>{
                                                     <span className="fs-11 mb-0 text-muted">React Developer</span>
                                                 </div>
                                             </div>
-                                        </a>
+                                        </Link>
                                     </div>
                                 </div>
         
                                 <div className="text-center pt-3 pb-1">
-                                    <a href="pages-search-results.html" className="btn btn-primary btn-sm">View All Results
-                                    <i className="ri-arrow-right-line ms-1"></i></a>
+                                    <Link to="/" className="btn btn-primary btn-sm">View All Results
+                                    <i className="ri-arrow-right-line ms-1"></i></Link>
                                 </div>
                             </div>
                         </form>
@@ -147,51 +148,51 @@ export const HeaderMenu : React.FC = ()=>{
                             </button>
                             <div className="dropdown-menu dropdown-menu-end">
         
-                                <a href="javascript:void(0);" className="dropdown-item notify-item language py-2" data-lang="en" title="English">
+                                <Link to="javascript:void(0);" className="dropdown-item notify-item language py-2" data-lang="en" title="English">
                                     <img src="/assets/images/flags/us.svg" alt="user-image" className="me-2 rounded" height="18"/>
                                     <span className="align-middle">English</span>
-                                </a>
+                                </Link>
         
         
-                                <a href="javascript:void(0);" className="dropdown-item notify-item language" data-lang="sp" title="Spanish">
+                                <Link to="javascript:void(0);" className="dropdown-item notify-item language" data-lang="sp" title="Spanish">
                                     <img src="/assets/images/flags/spain.svg" alt="user-image" className="me-2 rounded" height="18"/>
                                     <span className="align-middle">Española</span>
-                                </a>
+                                </Link>
         
         
-                                <a href="javascript:void(0);" className="dropdown-item notify-item language" data-lang="gr" title="German">
+                                <Link to="javascript:void(0);" className="dropdown-item notify-item language" data-lang="gr" title="German">
                                     <img src="/assets/images/flags/germany.svg" alt="user-image" className="me-2 rounded" height="18"/> <span className="align-middle">Deutsche</span>
-                                </a>
+                                </Link>
         
         
-                                <a href="javascript:void(0);" className="dropdown-item notify-item language" data-lang="it" title="Italian">
+                                <Link to="javascript:void(0);" className="dropdown-item notify-item language" data-lang="it" title="Italian">
                                     <img src="/assets/images/flags/italy.svg" alt="user-image" className="me-2 rounded" height="18"/>
                                     <span className="align-middle">Italiana</span>
-                                </a>
+                                </Link>
         
         
-                                <a href="javascript:void(0);" className="dropdown-item notify-item language" data-lang="ru" title="Russian">
+                                <Link to="javascript:void(0);" className="dropdown-item notify-item language" data-lang="ru" title="Russian">
                                     <img src="/assets/images/flags/russia.svg" alt="user-image" className="me-2 rounded" height="18"/>
                                     <span className="align-middle">русский</span>
-                                </a>
+                                </Link>
         
         
-                                <a href="javascript:void(0);" className="dropdown-item notify-item language" data-lang="ch" title="Chinese">
+                                <Link to="javascript:void(0);" className="dropdown-item notify-item language" data-lang="ch" title="Chinese">
                                     <img src="/assets/images/flags/china.svg" alt="user-image" className="me-2 rounded" height="18"/>
                                     <span className="align-middle">中国人</span>
-                                </a>
+                                </Link>
         
         
-                                <a href="javascript:void(0);" className="dropdown-item notify-item language" data-lang="fr" title="French">
+                                <Link to="javascript:void(0);" className="dropdown-item notify-item language" data-lang="fr" title="French">
                                     <img src="/assets/images/flags/french.svg" alt="user-image" className="me-2 rounded" height="18"/>
                                     <span className="align-middle">français</span>
-                                </a>
+                                </Link>
         
         
-                                <a href="javascript:void(0);" className="dropdown-item notify-item language" data-lang="ar" title="Arabic">
+                                <Link to="javascript:void(0);" className="dropdown-item notify-item language" data-lang="ar" title="Arabic">
                                     <img src="/assets/images/flags/ae.svg" alt="user-image" className="me-2 rounded" height="18"/>
                                     <span className="align-middle">Arabic</span>
-                                </a>
+                                </Link>
                             </div>
                         </div>
         
@@ -206,8 +207,8 @@ export const HeaderMenu : React.FC = ()=>{
                                             <h6 className="m-0 fw-semibold fs-15"> Web Apps </h6>
                                         </div>
                                         <div className="col-auto">
-                                            <a href="#!" className="btn btn-sm btn-soft-info"> View All Apps
-                                                <i className="ri-arrow-right-s-line align-middle"></i></a>
+                                            <Link to="#!" className="btn btn-sm btn-soft-info"> View All Apps
+                                                <i className="ri-arrow-right-s-line align-middle"></i></Link>
                                         </div>
                                     </div>
                                 </div>
@@ -215,43 +216,43 @@ export const HeaderMenu : React.FC = ()=>{
                                 <div className="p-2">
                                     <div className="row g-0">
                                         <div className="col">
-                                            <a className="dropdown-icon-item" href="#!">
+                                            <Link className="dropdown-icon-item" to="#!">
                                                 <img src="/assets/images/brands/github.png" alt="Github"/>
                                                 <span>GitHub</span>
-                                            </a>
+                                            </Link>
                                         </div>
                                         <div className="col">
-                                            <a className="dropdown-icon-item" href="#!">
+                                            <Link className="dropdown-icon-item" to="#!">
                                                 <img src="/assets/images/brands/bitbucket.png" alt="bitbucket"/>
                                                 <span>Bitbucket</span>
-                                            </a>
+                                            </Link>
                                         </div>
                                         <div className="col">
-                                            <a className="dropdown-icon-item" href="#!">
+                                            <Link className="dropdown-icon-item" to="#!">
                                                 <img src="/assets/images/brands/dribbble.png" alt="dribbble"/>
                                                 <span>Dribbble</span>
-                                            </a>
+                                            </Link>
                                         </div>
                                     </div>
         
                                     <div className="row g-0">
                                         <div className="col">
-                                            <a className="dropdown-icon-item" href="#!">
+                                            <Link className="dropdown-icon-item" to="#!">
                                                 <img src="/assets/images/brands/dropbox.png" alt="dropbox"/>
                                                 <span>Dropbox</span>
-                                            </a>
+                                            </Link>
                                         </div>
                                         <div className="col">
-                                            <a className="dropdown-icon-item" href="#!">
+                                            <Link className="dropdown-icon-item" to="#!">
                                                 <img src="/assets/images/brands/mail_chimp.png" alt="mail_chimp"/>
                                                 <span>Mail Chimp</span>
-                                            </a>
+                                            </Link>
                                         </div>
                                         <div className="col">
-                                            <a className="dropdown-icon-item" href="#!">
+                                            <Link className="dropdown-icon-item" to="#!">
                                                 <img src="/assets/images/brands/slack.png" alt="slack"/>
                                                 <span>Slack</span>
-                                            </a>
+                                            </Link>
                                         </div>
                                     </div>
                                 </div>
@@ -285,15 +286,15 @@ export const HeaderMenu : React.FC = ()=>{
                                                 </div>
                                             </div>
                                             <h5 className="mb-3">Your Cart is Empty!</h5>
-                                            <a href="apps-ecommerce-products.html" className="btn btn-success w-md mb-3">Shop Now</a>
+                                            <Link to="/" className="btn btn-success w-md mb-3">Shop Now</Link>
                                         </div>
                                         <div className="d-block dropdown-item dropdown-item-cart text-wrap px-3 py-2">
                                             <div className="d-flex align-items-center">
                                                 <img src="/assets/images/products/img-1.png" className="me-3 rounded-circle avatar-sm p-2 bg-light" alt="user-pic"/>
                                                 <div className="flex-grow-1">
                                                     <h6 className="mt-0 mb-1 fs-14">
-                                                        <a href="apps-ecommerce-product-details.html" className="text-reset">Branded
-                                                            T-Shirts</a>
+                                                        <Link to="/" className="text-reset">Branded
+                                                            T-Shirts</Link>
                                                     </h6>
                                                     <p className="mb-0 fs-12 text-muted">
                                                         Quantity: <span>10 x $32</span>
@@ -313,7 +314,7 @@ export const HeaderMenu : React.FC = ()=>{
                                                 <img src="/assets/images/products/img-2.png" className="me-3 rounded-circle avatar-sm p-2 bg-light" alt="user-pic"/>
                                                 <div className="flex-grow-1">
                                                     <h6 className="mt-0 mb-1 fs-14">
-                                                        <a href="apps-ecommerce-product-details.html" className="text-reset">Bentwood Chair</a>
+                                                        <Link to="/" className="text-reset">Bentwood Chair</Link>
                                                     </h6>
                                                     <p className="mb-0 fs-12 text-muted">
                                                         Quantity: <span>5 x $18</span>
@@ -333,8 +334,8 @@ export const HeaderMenu : React.FC = ()=>{
                                                 <img src="/assets/images/products/img-3.png" className="me-3 rounded-circle avatar-sm p-2 bg-light" alt="user-pic"/>
                                                 <div className="flex-grow-1">
                                                     <h6 className="mt-0 mb-1 fs-14">
-                                                        <a href="apps-ecommerce-product-details.html" className="text-reset">
-                                                            Borosil Paper Cup</a>
+                                                        <Link to="/" className="text-reset">
+                                                            Borosil Paper Cup</Link>
                                                     </h6>
                                                     <p className="mb-0 fs-12 text-muted">
                                                         Quantity: <span>3 x $250</span>
@@ -354,8 +355,8 @@ export const HeaderMenu : React.FC = ()=>{
                                                 <img src="/assets/images/products/img-6.png" className="me-3 rounded-circle avatar-sm p-2 bg-light" alt="user-pic"/>
                                                 <div className="flex-grow-1">
                                                     <h6 className="mt-0 mb-1 fs-14">
-                                                        <a href="apps-ecommerce-product-details.html" className="text-reset">Gray
-                                                            Styled T-Shirt</a>
+                                                        <Link to="/" className="text-reset">Gray
+                                                            Styled T-Shirt</Link>
                                                     </h6>
                                                     <p className="mb-0 fs-12 text-muted">
                                                         Quantity: <span>1 x $1250</span>
@@ -375,7 +376,7 @@ export const HeaderMenu : React.FC = ()=>{
                                                 <img src="/assets/images/products/img-5.png" className="me-3 rounded-circle avatar-sm p-2 bg-light" alt="user-pic"/>
                                                 <div className="flex-grow-1">
                                                     <h6 className="mt-0 mb-1 fs-14">
-                                                        <a href="apps-ecommerce-product-details.html" className="text-reset">Stillbird Helmet</a>
+                                                        <Link to="/" className="text-reset">Stillbird Helmet</Link>
                                                     </h6>
                                                     <p className="mb-0 fs-12 text-muted">
                                                         Quantity: <span>2 x $495</span>
@@ -399,9 +400,9 @@ export const HeaderMenu : React.FC = ()=>{
                                         </div>
                                     </div>
         
-                                    <a href="apps-ecommerce-checkout.html" className="btn btn-success text-center w-100">
+                                    <Link to="/" className="btn btn-success text-center w-100">
                                         Checkout
-                                    </a>
+                                    </Link>
                                 </div>
                             </div>
                         </div>
@@ -440,19 +441,19 @@ export const HeaderMenu : React.FC = ()=>{
                                     <div className="px-2 pt-2">
                                         <ul className="nav nav-tabs dropdown-tabs nav-tabs-custom" data-dropdown-tabs="true" id="notificationItemsTab" role="tablist">
                                             <li className="nav-item waves-effect waves-light">
-                                                <a className="nav-link active" data-bs-toggle="tab" href="#all-noti-tab" role="tab" aria-selected="true">
+                                                <Link className="nav-link active" data-bs-toggle="tab" to="#all-noti-tab" role="tab" aria-selected="true">
                                                     All (4)
-                                                </a>
+                                                </Link>
                                             </li>
                                             <li className="nav-item waves-effect waves-light">
-                                                <a className="nav-link" data-bs-toggle="tab" href="#messages-tab" role="tab" aria-selected="false">
+                                                <Link className="nav-link" data-bs-toggle="tab" to="#messages-tab" role="tab" aria-selected="false">
                                                     Messages
-                                                </a>
+                                                </Link>
                                             </li>
                                             <li className="nav-item waves-effect waves-light">
-                                                <a className="nav-link" data-bs-toggle="tab" href="#alerts-tab" role="tab" aria-selected="false">
+                                                <Link className="nav-link" data-bs-toggle="tab" to="#alerts-tab" role="tab" aria-selected="false">
                                                     Alerts
-                                                </a>
+                                                </Link>
                                             </li>
                                         </ul>
                                     </div>
@@ -471,12 +472,12 @@ export const HeaderMenu : React.FC = ()=>{
                                                         </span>
                                                     </div>
                                                     <div className="flex-grow-1">
-                                                        <a href="#!" className="stretched-link">
+                                                        <Link to="#!" className="stretched-link">
                                                             <h6 className="mt-0 mb-2 lh-base">Your <b>Elite</b> author Graphic
                                                                 Optimization <span className="text-secondary">reward</span> is
                                                                 ready!
                                                             </h6>
-                                                        </a>
+                                                        </Link>
                                                         <p className="mb-0 fs-11 fw-medium text-uppercase text-muted">
                                                             <span><i className="mdi mdi-clock-outline"></i> Just 30 sec ago</span>
                                                         </p>
@@ -494,9 +495,9 @@ export const HeaderMenu : React.FC = ()=>{
                                                 <div className="d-flex">
                                                     <img src="/assets/images/users/avatar-2.jpg" className="me-3 rounded-circle avatar-xs flex-shrink-0" alt="user-pic"/>
                                                     <div className="flex-grow-1">
-                                                        <a href="#!" className="stretched-link">
+                                                        <Link to="#!" className="stretched-link">
                                                             <h6 className="mt-0 mb-1 fs-13 fw-semibold">Angela Bernier</h6>
-                                                        </a>
+                                                        </Link>
                                                         <div className="fs-13 text-muted">
                                                             <p className="mb-1">Answered to your comment on the cash flow forecast's
                                                                 graph 🔔.</p>
@@ -522,10 +523,10 @@ export const HeaderMenu : React.FC = ()=>{
                                                         </span>
                                                     </div>
                                                     <div className="flex-grow-1">
-                                                        <a href="#!" className="stretched-link">
+                                                        <Link to="#!" className="stretched-link">
                                                             <h6 className="mt-0 mb-2 fs-13 lh-base">You have received <b className="text-success">20</b> new messages in the conversation
                                                             </h6>
-                                                        </a>
+                                                        </Link>
                                                         <p className="mb-0 fs-11 fw-medium text-uppercase text-muted">
                                                             <span><i className="mdi mdi-clock-outline"></i> 2 hrs ago</span>
                                                         </p>
@@ -543,9 +544,9 @@ export const HeaderMenu : React.FC = ()=>{
                                                 <div className="d-flex">
                                                     <img src="/assets/images/users/avatar-8.jpg" className="me-3 rounded-circle avatar-xs flex-shrink-0" alt="user-pic"/>
                                                     <div className="flex-grow-1">
-                                                        <a href="#!" className="stretched-link">
+                                                        <Link to="#!" className="stretched-link">
                                                             <h6 className="mt-0 mb-1 fs-13 fw-semibold">Maureen Gibson</h6>
-                                                        </a>
+                                                        </Link>
                                                         <div className="fs-13 text-muted">
                                                             <p className="mb-1">We talked about a project on linkedin.</p>
                                                         </div>
@@ -578,9 +579,9 @@ export const HeaderMenu : React.FC = ()=>{
                                                 <div className="d-flex">
                                                     <img src="/assets/images/users/avatar-3.jpg" className="me-3 rounded-circle avatar-xs" alt="user-pic"/>
                                                     <div className="flex-grow-1">
-                                                        <a href="#!" className="stretched-link">
+                                                        <Link to="#!" className="stretched-link">
                                                             <h6 className="mt-0 mb-1 fs-13 fw-semibold">James Lemire</h6>
-                                                        </a>
+                                                        </Link>
                                                         <div className="fs-13 text-muted">
                                                             <p className="mb-1">We talked about a project on linkedin.</p>
                                                         </div>
@@ -601,9 +602,9 @@ export const HeaderMenu : React.FC = ()=>{
                                                 <div className="d-flex">
                                                     <img src="/assets/images/users/avatar-2.jpg" className="me-3 rounded-circle avatar-xs" alt="user-pic"/>
                                                     <div className="flex-grow-1">
-                                                        <a href="#!" className="stretched-link">
+                                                        <Link to="#!" className="stretched-link">
                                                             <h6 className="mt-0 mb-1 fs-13 fw-semibold">Angela Bernier</h6>
-                                                        </a>
+                                                        </Link>
                                                         <div className="fs-13 text-muted">
                                                             <p className="mb-1">Answered to your comment on the cash flow forecast's
                                                                 graph 🔔.</p>
@@ -626,9 +627,9 @@ export const HeaderMenu : React.FC = ()=>{
                                                 <div className="d-flex">
                                                     <img src="/assets/images/users/avatar-6.jpg" className="me-3 rounded-circle avatar-xs" alt="user-pic"/>
                                                     <div className="flex-grow-1">
-                                                        <a href="#!" className="stretched-link">
+                                                        <Link to="#!" className="stretched-link">
                                                             <h6 className="mt-0 mb-1 fs-13 fw-semibold">Kenneth Brown</h6>
-                                                        </a>
+                                                        </Link>
                                                         <div className="fs-13 text-muted">
                                                             <p className="mb-1">Mentionned you in his comment on 📃 invoice #12501.
                                                             </p>
@@ -651,9 +652,9 @@ export const HeaderMenu : React.FC = ()=>{
                                                 <div className="d-flex">
                                                     <img src="/assets/images/users/avatar-8.jpg" className="me-3 rounded-circle avatar-xs" alt="user-pic"/>
                                                     <div className="flex-grow-1">
-                                                        <a href="#!" className="stretched-link">
+                                                        <Link to="#!" className="stretched-link">
                                                             <h6 className="mt-0 mb-1 fs-13 fw-semibold">Maureen Gibson</h6>
-                                                        </a>
+                                                        </Link>
                                                         <div className="fs-13 text-muted">
                                                             <p className="mb-1">We talked about a project on linkedin.</p>
                                                         </div>
@@ -701,15 +702,7 @@ export const HeaderMenu : React.FC = ()=>{
                             <div className="dropdown-menu dropdown-menu-end">
         
                                 <h6 className="dropdown-header">Welcome Anna!</h6>
-                                <a className="dropdown-item" href="pages-profile.html"><i className="mdi mdi-account-circle text-muted fs-16 align-middle me-1"></i> <span className="align-middle">Profile</span></a>
-                                <a className="dropdown-item" href="apps-chat.html"><i className="mdi mdi-message-text-outline text-muted fs-16 align-middle me-1"></i> <span className="align-middle">Messages</span></a>
-                                <a className="dropdown-item" href="apps-tasks-kanban.html"><i className="mdi mdi-calendar-check-outline text-muted fs-16 align-middle me-1"></i> <span className="align-middle">Taskboard</span></a>
-                                <a className="dropdown-item" href="pages-faqs.html"><i className="mdi mdi-lifebuoy text-muted fs-16 align-middle me-1"></i> <span className="align-middle">Help</span></a>
-                                <div className="dropdown-divider"></div>
-                                <a className="dropdown-item" href="pages-profile.html"><i className="mdi mdi-wallet text-muted fs-16 align-middle me-1"></i> <span className="align-middle">Balance : <b>$5971.67</b></span></a>
-                                <a className="dropdown-item" href="pages-profile-settings.html"><span className="badge bg-success-subtle text-success mt-1 float-end">New</span><i className="mdi mdi-cog-outline text-muted fs-16 align-middle me-1"></i> <span className="align-middle">Settings</span></a>
-                                <a className="dropdown-item" href="auth-lockscreen-basic.html"><i className="mdi mdi-lock text-muted fs-16 align-middle me-1"></i> <span className="align-middle">Lock screen</span></a>
-                                <a className="dropdown-item" href="auth-logout-basic.html"><i className="mdi mdi-logout text-muted fs-16 align-middle me-1"></i> <span className="align-middle" data-key="t-logout">Logout</span></a>
+                              
                             </div>
                         </div>
                     </div>

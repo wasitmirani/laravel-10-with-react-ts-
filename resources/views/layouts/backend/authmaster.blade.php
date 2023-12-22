@@ -33,7 +33,7 @@
         <!-- auth-page content -->
         <div class="auth-page-content overflow-hidden pt-lg-5">
             <div class="container">
-					@yield('conent')
+					@yield('content')
                 <!-- end row -->
             </div>
             <!-- end container -->

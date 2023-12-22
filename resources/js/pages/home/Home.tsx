@@ -1,24 +1,14 @@
 import React, { useEffect,useState  } from 'react';
 // import Helper from "../../utils/helpers";
-import SidebarMenu  from '../../utils/sidebar';
+
 
 const Home: React.FC = ()=>{
   
     const [is_loading, setIsLoading] = useState(true);
-	const sidebar = new SidebarMenu();
+
 
     useEffect(() => {
-		console.log("useEffect");
-		let data=sidebar.getMenuList();
-		console.log("data");
-		console.log(data);
-        setTimeout(() => {
-        
-           // Call the loadHomeScripts method here
-            // Helper.loadHomeScripts();
 	
-            // setIsLoading(false); // Update the state variable
-        }, 1000);
         
       }, []); // Empty dependency array means this useEffect will run once when the component mounts
     
