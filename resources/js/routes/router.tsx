@@ -1,7 +1,7 @@
 
 import Home from "@/pages/home/Home";
 import Dashboard from "@/pages/dashboard/Dashboard";
-
+import Products from "@/pages/catalog/product/Products"
 const perfix="/app";
 const generateRoute=(name:string,page:any,title:string,permission?: string)=>{
     return {path:perfix+name,exact:true,page:
@@ -26,6 +26,7 @@ const routes= [
 // { path: "/", element: <Home /> },
 generateRoute('/home',Home,'Home'),
 generateRoute('/dashboard',Dashboard,'Dashboard'),
+generateRoute('/catalog-products',Products,'Products'),
 //   { path: "*", element: <Home /> }
 ];
 

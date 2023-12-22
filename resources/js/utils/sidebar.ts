@@ -70,7 +70,7 @@ class Sidebar {
             this.setMultiMenu('Catalog', 'fa-solid fa-layer-group', 'catalog-views',
                 [
                     this.setSubMenu('Listing', '/catalog/listing', 'somePermission'),
-                    this.setSubMenu('Products ', '/catalog/products ', 'somePermission'),
+                    this.setSubMenu('Products ', '/catalog-products', 'somePermission'),
                     this.setSubMenu('Variants', '/catalog/variants', 'somePermission'),
                     this.setSubMenu('Units', '/catalog/units', 'somePermission'),
                     this.setSubMenu('Categories', '/catalog/categories', 'somePermission'),
