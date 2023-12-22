@@ -26,7 +26,8 @@ const routes= [
 // { path: "/", element: <Home /> },
 generateRoute('/home',Home,'Home'),
 generateRoute('/dashboard',Dashboard,'Dashboard'),
-generateRoute('/catalog-products',Products,'Products'),
+generateRoute('/products',Products,'Products'),
+generateRoute('/create-product',Products,'Products'),
 //   { path: "*", element: <Home /> }
 ];
 

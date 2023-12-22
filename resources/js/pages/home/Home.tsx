@@ -1,4 +1,5 @@
 import React, { useEffect,useState  } from 'react';
+import { Link } from 'react-router-dom';
 // import Helper from "../../utils/helpers";
 
 
@@ -22,7 +23,7 @@ const Home: React.FC = ()=>{
 
 					<div className="page-title-right">
 						<ol className="breadcrumb m-0">
-							<li className="breadcrumb-item"><a href="javascript: void(0);">Dashboards</a></li>
+							<li className="breadcrumb-item"><Link to="javascript: void(0);">Dashboards</Link></li>
 							<li className="breadcrumb-item active">Analytics</li>
 						</ol>
 					</div>
@@ -44,7 +45,7 @@ const Home: React.FC = ()=>{
 											Your free trial expired in <b>17</b> days.
 										</div>
 										<div className="flex-shrink-0">
-											<a href="pages-pricing.html" className="text-reset text-decoration-underline"><b>Upgrade</b></a>
+											<Link to="/" className="text-reset text-decoration-underline"><b>Upgrade</b></Link>
 										</div>
 									</div>
 
@@ -54,8 +55,8 @@ const Home: React.FC = ()=>{
 												<p className="fs-16 lh-base">Upgrade your plan from a <span className="fw-semibold">Free
 														trial</span>, to ‘Premium Plan’ <i className="mdi mdi-arrow-right"></i></p>
 												<div className="mt-3">
-													<a href="pages-pricing.html" className="btn btn-primary">Upgrade
-														Account!</a>
+													<Link to="/" className="btn btn-primary">Upgrade
+														Account!</Link>
 												</div>
 											</div>
 										</div>
@@ -321,14 +322,14 @@ const Home: React.FC = ()=>{
 						<h4 className="card-title mb-0 flex-grow-1">Audiences Sessions by Country</h4>
 						<div className="flex-shrink-0">
 							<div className="dropdown card-header-dropdown">
-								<a className="text-reset dropdown-btn" href="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								<Link className="text-reset dropdown-btn" to="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 									<span className="fw-semibold text-uppercase fs-12">Sort by: </span><span className="text-muted">Current Week<i className="mdi mdi-chevron-down ms-1"></i></span>
-								</a>
+								</Link>
 								<div className="dropdown-menu dropdown-menu-end">
-									<a className="dropdown-item" href="#">Today</a>
-									<a className="dropdown-item" href="#">Last Week</a>
-									<a className="dropdown-item" href="#">Last Month</a>
-									<a className="dropdown-item" href="#">Current Year</a>
+									<Link className="dropdown-item" to="#">Today</Link>
+									<Link className="dropdown-item" to="#">Last Week</Link>
+									<Link className="dropdown-item" to="#">Last Month</Link>
+									<Link className="dropdown-item" to="#">Current Year</Link>
 								</div>
 							</div>
 						</div>
@@ -350,14 +351,14 @@ const Home: React.FC = ()=>{
 						<h4 className="card-title mb-0 flex-grow-1">Users by Device</h4>
 						<div className="flex-shrink-0">
 							<div className="dropdown card-header-dropdown">
-								<a className="text-reset dropdown-btn" href="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								<Link className="text-reset dropdown-btn" to="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 									<span className="text-muted fs-16"><i className="mdi mdi-dots-vertical align-middle"></i></span>
-								</a>
+								</Link>
 								<div className="dropdown-menu dropdown-menu-end">
-									<a className="dropdown-item" href="#">Today</a>
-									<a className="dropdown-item" href="#">Last Week</a>
-									<a className="dropdown-item" href="#">Last Month</a>
-									<a className="dropdown-item" href="#">Current Year</a>
+									<Link className="dropdown-item"to="#">Today</Link>
+									<Link className="dropdown-item"to="#">Last Week</Link>
+									<Link className="dropdown-item"to="#">Last Month</Link>
+									<Link className="dropdown-item"to="#">Current Year</Link>
 								</div>
 							</div>
 						</div>
@@ -507,8 +508,8 @@ const Home: React.FC = ()=>{
 						</div>
 
 						<div className="mt-2 text-center">
-							<a href="javascript:void(0);" className="text-muted text-decoration-underline">Show
-								All</a>
+							<Link to="javascript:void(0);" className="text-muted text-decoration-underline">Show
+								All</Link>
 						</div>
 
 					</div>
@@ -521,14 +522,14 @@ const Home: React.FC = ()=>{
 						<h4 className="card-title mb-0 flex-grow-1">Top Pages</h4>
 						<div className="flex-shrink-0">
 							<div className="dropdown card-header-dropdown">
-								<a className="text-reset dropdown-btn" href="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								<Link className="text-reset dropdown-btn" to="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 									<span className="text-muted fs-16"><i className="mdi mdi-dots-vertical align-middle"></i></span>
-								</a>
+								</Link>
 								<div className="dropdown-menu dropdown-menu-end">
-									<a className="dropdown-item" href="#">Today</a>
-									<a className="dropdown-item" href="#">Last Week</a>
-									<a className="dropdown-item" href="#">Last Month</a>
-									<a className="dropdown-item" href="#">Current Year</a>
+									<Link className="dropdown-item" to="#">Today</Link>
+									<Link className="dropdown-item" to="#">Last Week</Link>
+									<Link className="dropdown-item" to="#">Last Month</Link>
+									<Link className="dropdown-item" to="#">Current Year</Link>
 								</div>
 							</div>
 						</div>
@@ -546,53 +547,35 @@ const Home: React.FC = ()=>{
 								<tbody>
 									<tr>
 										<td>
-											<a href="javascript:void(0);" className="link-secondary">/themesbrand/skote-25867</a>
+											<Link to="javascript:void(0);" className="link-secondary">/themesbrand/skote-25867</Link>
 										</td>
 										<td>99</td>
 										<td>25.3%</td>
 									</tr>
 									<tr>
 										<td>
-											<a href="javascript:void(0);" className="link-secondary">/dashonic/chat-24518</a>
+											<Link to="javascript:void(0);" className="link-secondary">/dashonic/chat-24518</Link>
 										</td>
 										<td>86</td>
 										<td>22.7%</td>
 									</tr>
 									<tr>
 										<td>
-											<a href="javascript:void(0);" className="link-secondary">/skote/timeline-27391</a>
+											<Link to="javascript:void(0);" className="link-secondary">/skote/timeline-27391</Link>
 										</td>
 										<td>64</td>
 										<td>18.7%</td>
 									</tr>
 									<tr>
 										<td>
-											<a href="javascript:void(0);" className="link-secondary">/themesbrand/minia-26441</a>
+											<Link to="javascript:void(0);" className="link-secondary">/themesbrand/minia-26441</Link>
 										</td>
 										<td>53</td>
 										<td>14.2%</td>
 									</tr>
-									<tr>
-										<td>
-											<a href="javascript:void(0);" className="link-secondary">/dashon/dashboard-29873</a>
-										</td>
-										<td>33</td>
-										<td>12.6%</td>
-									</tr>
-									<tr>
-										<td>
-											<a href="javascript:void(0);" className="link-secondary">/doot/chats-29964</a>
-										</td>
-										<td>20</td>
-										<td>10.9%</td>
-									</tr>
-									<tr>
-										<td>
-											<a href="javascript:void(0);" className="link-secondary">/minton/pages-29739</a>
-										</td>
-										<td>10</td>
-										<td>07.3%</td>
-									</tr>
+									
+									
+								
 								</tbody>
 							</table>
 						</div>
