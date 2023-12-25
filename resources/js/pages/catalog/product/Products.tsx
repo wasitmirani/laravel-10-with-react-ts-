@@ -1,4 +1,8 @@
+
 import React from 'react';
+import { Link } from 'react-router-dom';
+import Helper  from '@/utils/helpers';
+const helper= new Helper();
 
 const Products: React.FC = ()=>{
     return (
@@ -12,7 +16,7 @@ const Products: React.FC = ()=>{
                                             <h5 className="fs-16">Filters</h5>
                                         </div>
                                         <div className="flex-shrink-0">
-                                            <a href="#" className="text-decoration-underline" id="clearall">Clear All</a>
+                                            <Link to="#" className="text-decoration-underline" id="clearall">Clear All</Link>
                                         </div>
                                     </div>
 
@@ -28,73 +32,73 @@ const Products: React.FC = ()=>{
                                             <p className="text-muted text-uppercase fs-12 fw-medium mb-2">Products</p>
                                             <ul className="list-unstyled mb-0 filter-list">
                                                 <li>
-                                                    <a href="#" className="d-flex py-1 align-items-center">
+                                                    <Link to="#" className="d-flex py-1 align-items-center">
                                                         <div className="flex-grow-1">
                                                             <h5 className="fs-13 mb-0 listname">Grocery</h5>
                                                         </div>
-                                                    </a>
+                                                    </Link>
                                                 </li>
                                                 <li>
-                                                    <a href="#" className="d-flex py-1 align-items-center">
+                                                    <Link to="#" className="d-flex py-1 align-items-center">
                                                         <div className="flex-grow-1">
                                                             <h5 className="fs-13 mb-0 listname">Fashion</h5>
                                                         </div>
                                                         <div className="flex-shrink-0 ms-2">
                                                             <span className="badge bg-light text-muted">5</span>
                                                         </div>
-                                                    </a>
+                                                    </Link>
                                                 </li>
                                                 <li>
-                                                    <a href="#" className="d-flex py-1 align-items-center">
+                                                    <Link to="#" className="d-flex py-1 align-items-center">
                                                         <div className="flex-grow-1">
                                                             <h5 className="fs-13 mb-0 listname">Watches</h5>
                                                         </div>
-                                                    </a>
+                                                    </Link>
                                                 </li>
                                                 <li>
-                                                    <a href="#" className="d-flex py-1 align-items-center">
+                                                    <Link to="#" className="d-flex py-1 align-items-center">
                                                         <div className="flex-grow-1">
                                                             <h5 className="fs-13 mb-0 listname">Electronics</h5>
                                                         </div>
                                                         <div className="flex-shrink-0 ms-2">
                                                             <span className="badge bg-light text-muted">5</span>
                                                         </div>
-                                                    </a>
+                                                    </Link>
                                                 </li>
                                                 <li>
-                                                    <a href="#" className="d-flex py-1 align-items-center">
+                                                    <Link to="#" className="d-flex py-1 align-items-center">
                                                         <div className="flex-grow-1">
                                                             <h5 className="fs-13 mb-0 listname">Furniture</h5>
                                                         </div>
                                                         <div className="flex-shrink-0 ms-2">
                                                             <span className="badge bg-light text-muted">6</span>
                                                         </div>
-                                                    </a>
+                                                    </Link>
                                                 </li>
                                                 <li>
-                                                    <a href="#" className="d-flex py-1 align-items-center">
+                                                    <Link to="#" className="d-flex py-1 align-items-center">
                                                         <div className="flex-grow-1">
                                                             <h5 className="fs-13 mb-0 listname">Automotive Accessories</h5>
                                                         </div>
-                                                    </a>
+                                                    </Link>
                                                 </li>
                                                 <li>
-                                                    <a href="#" className="d-flex py-1 align-items-center">
+                                                    <Link to="#" className="d-flex py-1 align-items-center">
                                                         <div className="flex-grow-1">
                                                             <h5 className="fs-13 mb-0 listname">Appliances</h5>
                                                         </div>
                                                         <div className="flex-shrink-0 ms-2">
                                                             <span className="badge bg-light text-muted">7</span>
                                                         </div>
-                                                    </a>
+                                                    </Link>
                                                 </li>
 
                                                 <li>
-                                                    <a href="#" className="d-flex py-1 align-items-center">
+                                                    <Link to="#" className="d-flex py-1 align-items-center">
                                                         <div className="flex-grow-1">
                                                             <h5 className="fs-13 mb-0 listname">Kids</h5>
                                                         </div>
-                                                    </a>
+                                                    </Link>
                                                 </li>
                                             </ul>
                                         </div>
@@ -258,7 +262,10 @@ const Products: React.FC = ()=>{
                                         <div className="row g-4">
                                             <div className="col-sm-auto">
                                                 <div>
-                                                    <a href="apps-ecommerce-add-product.html" className="btn btn-success" id="addproduct-btn"><i className="ri-add-line align-bottom me-1"></i> Add Product</a>
+                                                    <Link to={helper.prefix_url+`/create-product`} 
+                                                    className="btn btn-success" id="addproduct-btn">
+                                                        <i className="ri-add-line align-bottom me-1"></i> 
+                                                        Add Product</Link>
                                                 </div>
                                             </div>
                                             <div className="col-sm">
@@ -277,19 +284,19 @@ const Products: React.FC = ()=>{
                                             <div className="col">
                                                 <ul className="nav nav-tabs-custom card-header-tabs border-bottom-0" role="tablist">
                                                     <li className="nav-item">
-                                                        <a className="nav-link active fw-semibold" data-bs-toggle="tab" href="#productnav-all" role="tab">
+                                                        <Link className="nav-link active fw-semibold" data-bs-toggle="tab" to="#productnav-all" role="tab">
                                                             All <span className="badge bg-danger-subtle text-danger align-middle rounded-pill ms-1">12</span>
-                                                        </a>
+                                                        </Link>
                                                     </li>
                                                     <li className="nav-item">
-                                                        <a className="nav-link fw-semibold" data-bs-toggle="tab" href="#productnav-published" role="tab">
+                                                        <Link className="nav-link fw-semibold" data-bs-toggle="tab" to="#productnav-published" role="tab">
                                                             Published <span className="badge bg-danger-subtle text-danger align-middle rounded-pill ms-1">5</span>
-                                                        </a>
+                                                        </Link>
                                                     </li>
                                                     <li className="nav-item">
-                                                        <a className="nav-link fw-semibold" data-bs-toggle="tab" href="#productnav-draft" role="tab">
+                                                        <Link className="nav-link fw-semibold" data-bs-toggle="tab" to="#productnav-draft" role="tab">
                                                             Draft
-                                                        </a>
+                                                        </Link>
                                                     </li>
                                                 </ul>
                                             </div>
@@ -336,7 +343,7 @@ const Products: React.FC = ()=>{
                                                                 <label className="form-check-label" ></label>
                                                             </div>
                                                         </th>
-                                                        <td><a href="#" className="fw-medium">#VZ2106</a></td>
+                                                        <td><Link to="#" className="fw-medium">#VZ2106</Link></td>
                                                         <td>10 Nov, 07:20</td>
                                                         <td className="text-success"><i className="ri-checkbox-circle-line fs-17 align-middle"></i> Paid</td>
                                                         <td>

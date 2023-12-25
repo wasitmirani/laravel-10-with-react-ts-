@@ -1,4 +1,12 @@
 class Helper {
+    public prefix_url: string;
+
+    // Constructor to initialize the property
+    constructor() {
+      this.prefix_url = "/app";
+     
+    }
+
     static loadHomeScripts = (): void => {
       const scriptList = [
         '/assets/js/app.js',

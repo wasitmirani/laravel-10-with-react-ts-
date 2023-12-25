@@ -2,9 +2,12 @@
 import Home from "@/pages/home/Home";
 import Dashboard from "@/pages/dashboard/Dashboard";
 import Products from "@/pages/catalog/product/Products"
-const perfix="/app";
+import Helpers  from "@/utils/helpers";
+import CreateProduct from "@/pages/catalog/product/CreateProduct";
+const helper = new Helpers();
+
 const generateRoute=(name:string,page:any,title:string,permission?: string)=>{
-    return {path:perfix+name,exact:true,page:
+    return {path:helper.prefix_url +name,exact:true,page:
         {
                         component: page,
                         title: title,
@@ -27,7 +30,7 @@ const routes= [
 generateRoute('/home',Home,'Home'),
 generateRoute('/dashboard',Dashboard,'Dashboard'),
 generateRoute('/products',Products,'Products'),
-generateRoute('/create-product',Products,'Products'),
+generateRoute('/create-product',CreateProduct,'create-product'),
 //   { path: "*", element: <Home /> }
 ];
 
